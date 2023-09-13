@@ -166,15 +166,15 @@ class _LoginScreenState extends State<LoginScreen> {
                         ),
                       ),
                       onPressed: () {
-                        // if (!emailTextEditingController.text.contains("@")) {
-                        //   displayToastMessage(
-                        //       "Email address not valid", context);
-                        // } else if (passwordTextEditingController.text.isEmpty) {
-                        //   displayToastMessage(
-                        //       "Password is mandatory.", context);
-                        // } else {
-                        //   loginAndAutheticateUser(context);
-                        // }
+                        if (!emailTextEditingController.text.contains("@")) {
+                          displayToastMessage(
+                              "Email address not valid", context);
+                        } else if (passwordTextEditingController.text.isEmpty) {
+                          displayToastMessage(
+                              "Password is mandatory.", context);
+                        } else {
+                          loginAndAutheticateUser(context);
+                        }
                       },
                     )
                   ],
@@ -242,49 +242,49 @@ class _LoginScreenState extends State<LoginScreen> {
     );
   }
 
-  // final FirebaseAuth _firebaseAuth = FirebaseAuth.instance;
+  final FirebaseAuth _firebaseAuth = FirebaseAuth.instance;
 
-  // void loginAndAutheticateUser(BuildContext context) async {
-  //   showDialog(
-  //       context: context,
-  //       barrierDismissible: false,
-  //       builder: (BuildContext context) {
-  //         return ProgressDialog(
-  //           message: "Authenticating,\n Please Wait.... ",
-  //         );
-  //       });
+  void loginAndAutheticateUser(BuildContext context) async {
+    showDialog(
+        context: context,
+        barrierDismissible: false,
+        builder: (BuildContext context) {
+          return ProgressDialog(
+            message: "Authenticating,\n Please Wait.... ",
+          );
+        });
 
-  //   final firebaseUser = (await _firebaseAuth
-  //           .signInWithEmailAndPassword(
-  //     email: emailTextEditingController.text,
-  //     password: passwordTextEditingController.text,
-  //   )
-  //           .catchError((errMsg) {
-  //     Navigator.pop(context);
-  //     displayToastMessage("Error:$errMsg", context);
-  //   }))
-  //       .user;
+    final firebaseUser = (await _firebaseAuth
+            .signInWithEmailAndPassword(
+      email: emailTextEditingController.text,
+      password: passwordTextEditingController.text,
+    )
+            .catchError((errMsg) {
+      Navigator.pop(context);
+      displayToastMessage("Error:$errMsg", context);
+    }))
+        .user;
 
-  //   if (firebaseUser != null) {
-  //     userRef.child(firebaseUser.uid).once().then((dataSnapshot) {
-  //       // ignore: unnecessary_null_comparison
-  //       if (dataSnapshot != null) {
-  //         Navigator.pushNamedAndRemoveUntil(
-  //             context, MainScreen.idScreen, (route) => false);
-  //         displayToastMessage(
-  //             "You have been Succesfully \nLogged In.", context);
-  //       } else {
-  //         Navigator.pop(context);
-  //         _firebaseAuth.signOut();
-  //         displayToastMessage(
-  //             "No, Records Exist for this User \n Please Register", context);
-  //       }
-  //     });
-  //   } else {
-  //     // ignore: use_build_context_synchronously
-  //     Navigator.pop(context);
-  //     // ignore: use_build_context_synchronously
-  //     displayToastMessage("Error Occured - Cannot be signed  in ", context);
-  //   }
-  // }
+    if (firebaseUser != null) {
+      userRef.child(firebaseUser.uid).once().then((dataSnapshot) {
+        // ignore: unnecessary_null_comparison
+        if (dataSnapshot != null) {
+          Navigator.pushNamedAndRemoveUntil(
+              context, MainScreen.idScreen, (route) => false);
+          displayToastMessage(
+              "You have been Succesfully \nLogged In.", context);
+        } else {
+          Navigator.pop(context);
+          _firebaseAuth.signOut();
+          displayToastMessage(
+              "No, Records Exist for this User \n Please Register", context);
+        }
+      });
+    } else {
+      // ignore: use_build_context_synchronously
+      Navigator.pop(context);
+      // ignore: use_build_context_synchronously
+      displayToastMessage("Error Occured - Cannot be signed  in ", context);
+    }
+  }
 }

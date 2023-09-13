@@ -1,3 +1,4 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:firebase_database/firebase_database.dart';
 import 'package:flutter/material.dart';
@@ -7,13 +8,9 @@ import 'package:pragati/MainScreens/loginScreen.dart';
 import 'package:pragati/MainScreens/mainPage.dart';
 import 'package:pragati/MainScreens/registrationScreen.dart';
 
-// Future<void> main() async {
-//   WidgetsFlutterBinding.ensureInitialized();
-//   await Firebase.initializeApp();
-//   runApp(MyApp());
-// }
-
-void main() {
+Future<void> main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp();
   runApp(MyApp());
 }
 
@@ -29,7 +26,9 @@ class MyApp extends StatelessWidget {
             fontFamily: 'Brand Bold',
             primarySwatch: Colors.orange,
             visualDensity: VisualDensity.adaptivePlatformDensity),
-        initialRoute: Splash.idScreen,
+        initialRoute: FirebaseAuth.instance.currentUser == null
+            ? Splash.idScreen
+            : MainScreen.idScreen,
         routes: {
           Splash.idScreen: (context) => Splash(),
           GetStartedScreen.idScreen: (context) => GetStartedScreen(),
