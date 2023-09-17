@@ -29,7 +29,7 @@ class _ForgotPasswordPageState extends State<ForgotPasswordPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color(0xFFCFD2CF),
+      backgroundColor: Color.fromARGB(255, 242, 243, 242),
       body: SingleChildScrollView(
         child: Padding(
           padding: EdgeInsets.all(8.0),
@@ -134,6 +134,22 @@ class _ForgotPasswordPageState extends State<ForgotPasswordPage> {
                     ),
                   ),
                 ),
+              ),
+              GestureDetector(
+                child: Text(
+                  'Go Back',
+                  style: GoogleFonts.cabin(
+                    textStyle: const TextStyle(
+                      fontSize: 15.0,
+                      color: Color(0xFF062833),
+                      decoration: TextDecoration.underline,
+                    ),
+                  ),
+                ),
+                onTap: () {
+                  Navigator.pushNamedAndRemoveUntil(
+                      context, LoginScreen.idScreen, (route) => false);
+                },
               ),
             ],
           ),

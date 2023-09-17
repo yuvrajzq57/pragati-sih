@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:pragati/MainScreens/landingPage.dart';
 import 'package:pragati/MainScreens/loginScreen.dart';
+import 'package:pragati/MainScreens/mainPage.dart';
 
 class GetStartedScreen extends StatelessWidget {
   static const String idScreen = "getStartedScreen";
@@ -36,18 +37,18 @@ class GetStartedScreen extends StatelessWidget {
                   textAlign: TextAlign.center,
                 ),
                 SizedBox(
-                  height: 63,
+                  height: 50,
                 ),
                 Image(
-                  image: AssetImage('images/pragatimain.png'),
+                  image: AssetImage('images/logo.png'),
                   height: 72,
                   width: 78,
                 ),
                 SizedBox(
-                  height: 76,
+                  height: 30,
                 ),
                 Text(
-                  "Yo yo yum yum",
+                  "Hellomw Guis",
                   style: GoogleFonts.poppins(
                     textStyle: TextStyle(
                       fontSize: 22.0,
@@ -57,10 +58,123 @@ class GetStartedScreen extends StatelessWidget {
                   ),
                 ),
                 SizedBox(
-                  height: 120,
+                  height: 70,
+                ),
+                Text("Select Language :"),
+                Padding(
+                  padding: const EdgeInsets.fromLTRB(25, 15, 15, 8),
+                  child: Row(
+                    children: [
+                      GestureDetector(
+                        child: Container(
+                          child: Column(
+                            children: [
+                              SizedBox(
+                                height: 20,
+                              ),
+                              Padding(
+                                padding:
+                                    const EdgeInsets.fromLTRB(2, 15, 0, 18),
+                                child: Text(
+                                  "English",
+                                  style: GoogleFonts.poppins(
+                                    textStyle: TextStyle(
+                                        fontWeight: FontWeight.w700,
+                                        fontSize: 17,
+                                        color: Colors.white),
+                                  ),
+                                ),
+                              ),
+
+                              // Image.asset(
+                              //   "images/mobile.png",
+                              //   height: 60,
+                              //   width: 60,
+                              // )
+                            ],
+                          ),
+                          height: 100,
+                          width: 120,
+                          decoration: BoxDecoration(
+                              boxShadow: [
+                                BoxShadow(
+                                    blurRadius: 14.0,
+                                    color: Color.fromARGB(255, 198, 194, 194),
+                                    offset: Offset(
+                                      10,
+                                      10,
+                                    )),
+                              ],
+                              color: Color(0xFF5AAAC3),
+                              borderRadius:
+                                  BorderRadius.all(Radius.circular(20))),
+                        ),
+                        onTap: () {
+                          Navigator.pushNamedAndRemoveUntil(
+                              context,
+                              MainScreen.idScreen,
+                              (route) => false); //changes to be made
+                        },
+                      ),
+                      SizedBox(
+                        width: 45,
+                      ),
+                      GestureDetector(
+                        child: Container(
+                          child: Column(
+                            children: [
+                              SizedBox(
+                                height: 20,
+                              ),
+                              Padding(
+                                padding:
+                                    const EdgeInsets.fromLTRB(0, 15, 0, 18),
+                                child: Text(
+                                  "Malayalam",
+                                  style: GoogleFonts.poppins(
+                                    textStyle: TextStyle(
+                                        fontWeight: FontWeight.w700,
+                                        fontSize: 17,
+                                        color: Colors.white),
+                                  ),
+                                ),
+                              ),
+
+                              // Image.asset(
+                              //   "images/mobile.png",
+                              //   height: 60,
+                              //   width: 60,
+                              // )
+                            ],
+                          ),
+                          height: 100,
+                          width: 120,
+                          decoration: BoxDecoration(
+                              boxShadow: [
+                                BoxShadow(
+                                    blurRadius: 14.0,
+                                    color: Color.fromARGB(255, 198, 194, 194),
+                                    offset: Offset(
+                                      10,
+                                      10,
+                                    )),
+                              ],
+                              color: Color(0xFF5AAAC3),
+                              borderRadius:
+                                  BorderRadius.all(Radius.circular(20))),
+                        ),
+                        onTap: () {
+                          Navigator.pushNamedAndRemoveUntil(
+                              context,
+                              MainScreen.idScreen,
+                              (route) => false); //changes to be made
+                        },
+                      ),
+                    ],
+                  ),
                 ),
                 SizedBox(
-                  height: 10,
+                  height: 40,
                 ),
                 ElevatedButton(
                   style: ElevatedButton.styleFrom(

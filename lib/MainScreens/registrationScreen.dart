@@ -32,7 +32,7 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color(0xFFCFD2CF),
+      backgroundColor: Color.fromARGB(255, 242, 242, 242),
       body: SingleChildScrollView(
         child: Padding(
           padding: const EdgeInsets.all(2.0),
@@ -60,7 +60,7 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
                 height: 47,
               ),
               Image(
-                image: AssetImage('images/pragatimain.png'),
+                image: AssetImage('images/logo.png'),
                 height: 72,
                 width: 78,
               ),

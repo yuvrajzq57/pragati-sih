@@ -27,11 +27,20 @@ class _SplashState extends State<Splash> {
 
   Widget build(BuildContext context) {
     return Scaffold(
-        backgroundColor: Color(0xFF062833),
+        backgroundColor: Color.fromARGB(255, 255, 255, 255),
         body: Center(
           child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
             children: [
+              Image(
+                image: AssetImage('images/splashScreen.png'),
+              ),
+              SizedBox(
+                height: 100,
+              ),
+              Image.asset("images/logo.png"),
+              SizedBox(
+                height: 10,
+              ),
               Center(
                   child: AnimatedTextKit(
                 animatedTexts: [
@@ -41,7 +50,7 @@ class _SplashState extends State<Splash> {
                       textStyle: TextStyle(
                         fontSize: 30.0,
                         fontWeight: FontWeight.w700,
-                        color: Color(0xFFCFD2CF),
+                        color: Color(0xFF062833),
                         letterSpacing: 3,
                       ),
                     ),

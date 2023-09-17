@@ -27,7 +27,7 @@ class _LoginScreenState extends State<LoginScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color(0xFFCFD2CF),
+      backgroundColor: Color.fromARGB(255, 249, 249, 249),
       body: SingleChildScrollView(
         child: Padding(
           padding: const EdgeInsets.all(8.0),
@@ -54,7 +54,7 @@ class _LoginScreenState extends State<LoginScreen> {
                 height: 47,
               ),
               Image(
-                image: AssetImage('images/pragatimain.png'),
+                image: AssetImage('images/logo.png'),
                 height: 72,
                 width: 78,
               ),
