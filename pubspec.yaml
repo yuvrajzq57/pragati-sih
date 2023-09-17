@@ -37,7 +37,7 @@ dependencies:
   cupertino_icons: ^1.0.2
   google_fonts: ^5.1.0
   animated_text_kit: ^4.2.2
-  firebase_core: ^2.1.1
+  firebase_core: ^2.1.1 
   firebase_auth: ^4.1.0
   firebase_database: ^10.0.3
   fluttertoast: ^8.1.1
@@ -45,7 +45,15 @@ dependencies:
   cloud_firestore: ^4.0.4
   shared_preferences: ^2.0.15
   email_validator: ^2.1.17
-
+  flutter_phone_direct_caller: ^2.1.1
+  carousel_slider: ^4.1.1
+  chat_gpt_sdk:
+    git:
+      url: https://github.com/iampawan/Flutter-ChatGPT.git
+  velocity_x: ^3.6.0
+  flutter_dotenv: ^5.0.2
+  http: ^0.13.5
+  
 dev_dependencies:
   flutter_test:
     sdk: flutter
@@ -71,6 +79,9 @@ flutter:
   # To add assets to your application, add an assets section, like this:
   assets:
     - images/pragatimain.png
+    - images/scholarship.jpg
+    - images/splashScreen.png
+    - images/bot.png
 
 
   # An image asset can refer to one or more resolution-specific "variants", see

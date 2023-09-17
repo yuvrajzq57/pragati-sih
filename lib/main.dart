@@ -2,6 +2,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:firebase_database/firebase_database.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:pragati/MainScreens/getStartedPage.dart';
 import 'package:pragati/MainScreens/landingPage.dart';
 import 'package:pragati/MainScreens/loginScreen.dart';
@@ -10,6 +11,7 @@ import 'package:pragati/MainScreens/registrationScreen.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
+
   await Firebase.initializeApp();
   runApp(MyApp());
 }
