@@ -1,3 +1,4 @@
+import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:pragati/MainScreens/mainPage.dart';
@@ -40,7 +41,7 @@ class _LoginScreenState extends State<LoginScreen> {
                 height: 26.0,
               ),
               Text(
-                "Pragati",
+                "pragati".tr,
                 style: GoogleFonts.poppins(
                   textStyle: TextStyle(
                       fontSize: 35.0,

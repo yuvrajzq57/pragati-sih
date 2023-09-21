@@ -1,10 +1,64 @@
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:firebase_database/firebase_database.dart';
+import 'package:firebase_database/ui/firebase_animated_list.dart';
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:pragati/MainScreens/getStartedPage.dart';
 
-class sideNavigationDrawer extends StatelessWidget {
-  const sideNavigationDrawer({super.key});
+class sideNavigationDrawer extends StatefulWidget {
+  sideNavigationDrawer({super.key});
+
+  @override
+  State<sideNavigationDrawer> createState() => _sideNavigationDrawerState();
+}
+
+class _sideNavigationDrawerState extends State<sideNavigationDrawer> {
+  final ref = FirebaseDatabase.instance.ref().child('users');
+
+  final List locale = [
+    {'name': 'ENGLISH', 'locale': Locale('en', 'US')},
+    {'name': 'ಕನ್ನಡ', 'locale': Locale('kn', 'IN')},
+    {'name': 'हिंदी', 'locale': Locale('hi', 'IN')},
+  ];
+
+  updateLanguage(Locale locale) {
+    Get.back();
+    Get.updateLocale(locale);
+  }
+
+  buildLanguageDialog(BuildContext context) {
+    showDialog(
+        context: context,
+        builder: (builder) {
+          return AlertDialog(
+            title: Text('Choose Your Language'),
+            content: Container(
+              width: double.maxFinite,
+              child: ListView.separated(
+                  shrinkWrap: true,
+                  itemBuilder: (context, index) {
+                    return Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: GestureDetector(
+                        child: Text(locale[index]['name']),
+                        onTap: () {
+                          updateLanguage(locale[index]['locale']);
+                        },
+                      ),
+                    );
+                  },
+                  separatorBuilder: (context, index) {
+                    return Divider(
+                      color: Colors.blue,
+                    );
+                  },
+                  itemCount: locale.length),
+            ),
+          );
+        });
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -30,8 +84,25 @@ class sideNavigationDrawer extends StatelessWidget {
                   Column(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
+                      // FirebaseAnimatedList(
+                      //   query: ref,
+                      //   itemBuilder: (context, snapshot, animation, index) {
+                      //     Map user = snapshot.value as Map;
+                      //     user['key'] = snapshot.key;
+                      //     return Text(
+                      //       snapshot.child('name').value.toString(),
+                      //       style: GoogleFonts.poppins(
+                      //         textStyle: const TextStyle(
+                      //           fontSize: 28,
+                      //           fontWeight: FontWeight.w700,
+                      //           color: Color(0xFF062833),
+                      //         ),
+                      //       ),
+                      //     );
+                      //   },
+                      // ),
                       Text(
-                        "Hellos",
+                        "Sangeeta ",
                         style: GoogleFonts.poppins(
                           textStyle: const TextStyle(
                             fontSize: 28,
@@ -74,7 +145,7 @@ class sideNavigationDrawer extends StatelessWidget {
               size: 35,
             ),
             title: Text(
-              "Settings",
+              "Settings".tr,
               style: GoogleFonts.poppins(
                 textStyle: const TextStyle(
                   fontWeight: FontWeight.w500,
@@ -107,13 +178,18 @@ class sideNavigationDrawer extends StatelessWidget {
               color: Color(0xFF0D3C4B),
               size: 35,
             ),
-            title: Text(
-              "Extra Feature!",
-              style: GoogleFonts.poppins(
-                textStyle: const TextStyle(
-                  fontWeight: FontWeight.w500,
-                  fontSize: 20,
-                  color: Color(0xFF0D3C4B),
+            title: GestureDetector(
+              onTap: () {
+                buildLanguageDialog(context);
+              },
+              child: Text(
+                "changelang".tr,
+                style: GoogleFonts.poppins(
+                  textStyle: const TextStyle(
+                    fontWeight: FontWeight.w500,
+                    fontSize: 20,
+                    color: Color(0xFF0D3C4B),
+                  ),
                 ),
               ),
             ),

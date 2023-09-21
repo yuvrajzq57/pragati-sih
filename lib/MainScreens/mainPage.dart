@@ -1,9 +1,15 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:pragati/MainScreens/chat_screen.dart';
+import 'package:pragati/MainScreens/gamesScreen.dart';
 import 'package:pragati/MainScreens/sideScreen.dart';
 import 'package:pragati/MainScreens/contactScreen.dart';
+import 'package:pragati/MainScreens/videoRecommendation.dart';
+import 'package:pragati/ProgressTracker/progressTrack.dart';
+import 'package:quickalert/quickalert.dart';
+import 'package:quickalert/widgets/quickalert_dialog.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class MainScreen extends StatefulWidget {
@@ -25,6 +31,15 @@ class _MainScreenState extends State<MainScreen> {
     }
   }
 
+  void showAlert() {
+    QuickAlert.show(
+      context: context,
+      type: QuickAlertType.success,
+      text: 'Transaction Completed Successfully!',
+      autoCloseDuration: const Duration(seconds: 2),
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return Stack(
@@ -32,7 +47,7 @@ class _MainScreenState extends State<MainScreen> {
         Container(
           child: Scaffold(
             key: scaffoldKey,
-            drawer: const sideNavigationDrawer(),
+            drawer: sideNavigationDrawer(),
             backgroundColor: const Color(0xFFFFFFFF),
             body: SingleChildScrollView(
               child: Container(
@@ -49,7 +64,7 @@ class _MainScreenState extends State<MainScreen> {
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
                             Text(
-                              "Pragati",
+                              "pragati".tr,
                               style: GoogleFonts.poppins(
                                 textStyle: const TextStyle(
                                     fontSize: 35.0,
@@ -62,26 +77,6 @@ class _MainScreenState extends State<MainScreen> {
                             Row(
                               mainAxisAlignment: MainAxisAlignment.end,
                               children: [
-                                GestureDetector(
-                                  child: Container(
-                                    height: 40,
-                                    width: 40,
-                                    decoration: const BoxDecoration(
-                                        color: Color(0xFF27444D),
-                                        borderRadius: BorderRadius.all(
-                                            Radius.circular(8))),
-                                    child: const Icon(
-                                      Icons.phone,
-                                      color: Colors.white,
-                                    ),
-                                  ),
-                                  onTap: () {
-                                    Navigator.pushNamedAndRemoveUntil(
-                                        context,
-                                        ContactScreen.idScreen,
-                                        (route) => false);
-                                  },
-                                ),
                                 const SizedBox(
                                   width: 12,
                                 ),
@@ -94,11 +89,40 @@ class _MainScreenState extends State<MainScreen> {
                                         borderRadius: BorderRadius.all(
                                             Radius.circular(8))),
                                     child: const Icon(
-                                      Icons.notification_add_rounded,
+                                      Icons.info_outline_rounded,
                                       color: Colors.white,
                                     ),
                                   ),
-                                  onTap: () {},
+                                  onTap: () {
+                                    showDialog(
+                                      context: context,
+                                      builder: (ctx) => AlertDialog(
+                                        title: const Text("Information Guide"),
+                                        content: const Text(
+                                            "You have various features to make your education stronger"),
+                                        actions: <Widget>[
+                                          TextButton(
+                                            onPressed: () {
+                                              Navigator.of(ctx).pop();
+                                            },
+                                            child: Container(
+                                              decoration: const BoxDecoration(
+                                                  color: Color.fromARGB(
+                                                      255, 195, 126, 85),
+                                                  borderRadius:
+                                                      BorderRadius.all(
+                                                          Radius.circular(8))),
+                                              padding: const EdgeInsets.all(14),
+                                              child: const Text("Okay",
+                                                  style: TextStyle(
+                                                      color: Color.fromARGB(
+                                                          255, 233, 233, 233))),
+                                            ),
+                                          ),
+                                        ],
+                                      ),
+                                    );
+                                  },
                                 ),
                               ],
                             ),
@@ -116,7 +140,7 @@ class _MainScreenState extends State<MainScreen> {
                               child: Column(
                                 children: [
                                   const SizedBox(
-                                    height: 52,
+                                    height: 48,
                                   ),
                                   Row(
                                     children: [
@@ -124,10 +148,10 @@ class _MainScreenState extends State<MainScreen> {
                                         width: 20,
                                       ),
                                       Text(
-                                        "Scholarship's",
+                                        "schlor".tr,
                                         style: GoogleFonts.poppins(
                                             textStyle: const TextStyle(
-                                                fontSize: 27,
+                                                fontSize: 25,
                                                 fontWeight: FontWeight.w700,
                                                 color: Color.fromARGB(
                                                     255, 40, 38, 38))),
@@ -352,7 +376,7 @@ class _MainScreenState extends State<MainScreen> {
                                   SizedBox(
                                     width: 20,
                                   ),
-                                  Text("Search for Videos")
+                                  Text("searc_video".tr)
                                 ],
                               ),
                             ),
@@ -417,32 +441,40 @@ class _MainScreenState extends State<MainScreen> {
                                     ),
                                   ),
                                 ),
-                                Container(
-                                  child: Padding(
-                                    padding: const EdgeInsets.all(8.0),
-                                    child: Row(
-                                      children: [
-                                        Icon(Icons.bookmark_border),
-                                        Text("Assignments"),
-                                      ],
+                                GestureDetector(
+                                  onTap: () {
+                                    Navigator.pushNamedAndRemoveUntil(
+                                        context,
+                                        VideoRecommendationScreen.idScreen,
+                                        (route) => false);
+                                  },
+                                  child: Container(
+                                    child: Padding(
+                                      padding: const EdgeInsets.all(8.0),
+                                      child: Row(
+                                        children: [
+                                          Icon(Icons.bookmark_border),
+                                          Text("VideoRecommendation"),
+                                        ],
+                                      ),
                                     ),
-                                  ),
-                                  height: 70,
-                                  width: 145,
-                                  decoration: const BoxDecoration(
-                                    boxShadow: [
-                                      BoxShadow(
-                                          blurRadius: 14.0,
-                                          color: Color.fromARGB(
-                                              255, 198, 194, 194),
-                                          offset: Offset(
-                                            10,
-                                            10,
-                                          )),
-                                    ],
-                                    color: Color(0xFFBFE5D5),
-                                    borderRadius: BorderRadius.all(
-                                      Radius.circular(15),
+                                    height: 70,
+                                    width: 145,
+                                    decoration: const BoxDecoration(
+                                      boxShadow: [
+                                        BoxShadow(
+                                            blurRadius: 14.0,
+                                            color: Color.fromARGB(
+                                                255, 198, 194, 194),
+                                            offset: Offset(
+                                              10,
+                                              10,
+                                            )),
+                                      ],
+                                      color: Color(0xFFBFE5D5),
+                                      borderRadius: BorderRadius.all(
+                                        Radius.circular(15),
+                                      ),
                                     ),
                                   ),
                                 ),
@@ -577,7 +609,10 @@ class _MainScreenState extends State<MainScreen> {
                               height: 10,
                             ),
                             GestureDetector(
-                              onTap: () {},
+                              onTap: () {
+                                Navigator.pushNamedAndRemoveUntil(context,
+                                    GamesScreen.idScreen, (route) => false);
+                              },
                               child: Container(
                                 child: Center(
                                   child: Text(
@@ -645,39 +680,137 @@ class _MainScreenState extends State<MainScreen> {
                       ),
                       SizedBox(
                         height: 20,
-                      )
+                      ),
+                      GestureDetector(
+                        child: Padding(
+                          padding: const EdgeInsets.fromLTRB(20, 0, 20, 0),
+                          child: Container(
+                            height: 154,
+                            width: 350,
+                            decoration: const BoxDecoration(
+                              gradient: LinearGradient(
+                                begin: Alignment.topRight,
+                                end: Alignment.bottomLeft,
+                                colors: [
+                                  Color.fromARGB(255, 221, 230, 238),
+                                  Color.fromARGB(255, 145, 226, 238),
+                                ],
+                              ),
+                              boxShadow: [
+                                BoxShadow(
+                                    blurRadius: 14.0,
+                                    color: Color.fromARGB(255, 198, 194, 194),
+                                    offset: Offset(
+                                      10,
+                                      10,
+                                    )),
+                              ],
+                              borderRadius: BorderRadius.all(
+                                Radius.circular(15),
+                              ),
+                            ),
+                            child: Column(
+                              mainAxisAlignment: MainAxisAlignment.start,
+                              children: [
+                                const SizedBox(
+                                  height: 10,
+                                ),
+                                Row(
+                                  mainAxisAlignment:
+                                      MainAxisAlignment.spaceBetween,
+                                  children: [
+                                    Padding(
+                                      padding: const EdgeInsets.fromLTRB(
+                                          20, 0, 0, 0),
+                                      child: Text(
+                                        "Progress Tracker",
+                                        style: GoogleFonts.poppins(
+                                          textStyle: const TextStyle(
+                                            fontWeight: FontWeight.w700,
+                                            fontSize: 30,
+                                            color: Colors.white,
+                                          ),
+                                        ),
+                                      ),
+                                    ),
+                                    Image.asset(
+                                      "images/bot.png",
+                                      height: 100,
+                                      width: 100,
+                                    ), //add image
+                                    const SizedBox(
+                                      width: 5,
+                                    ),
+                                  ],
+                                ),
+                                Row(
+                                  mainAxisAlignment: MainAxisAlignment.start,
+                                  children: [
+                                    const SizedBox(
+                                      width: 13,
+                                    ),
+                                    Padding(
+                                      padding: const EdgeInsets.fromLTRB(
+                                          10, 0, 8, 8),
+                                      child: Text(
+                                        "Track you data",
+                                        style: GoogleFonts.poppins(
+                                          textStyle: const TextStyle(
+                                            fontWeight: FontWeight.w500,
+                                            fontSize: 10,
+                                            color: Colors.white,
+                                          ),
+                                        ),
+                                      ),
+                                    ),
+                                  ],
+                                )
+                              ],
+                            ),
+                          ),
+                        ),
+                        onTap: () {
+                          Navigator.pushNamedAndRemoveUntil(
+                              context,
+                              ProgressTracker.idScreen,
+                              (route) => false); //chanegs to be made
+                        },
+                      ),
                     ],
                   ),
                 ),
               ),
             ),
-            bottomNavigationBar: BottomNavigationBar(
-              backgroundColor: Color.fromARGB(255, 139, 199, 219),
-              selectedItemColor: Colors.green,
-              items: [
-                BottomNavigationBarItem(
-                    icon: IconButton(
-                      icon: const Icon(
-                        Icons.person,
-                        color: Color(0xFF062833),
-                        size: 30,
+            bottomNavigationBar: SizedBox(
+              height: 78,
+              child: BottomNavigationBar(
+                backgroundColor: Color.fromARGB(255, 139, 199, 219),
+                selectedItemColor: Colors.green,
+                items: [
+                  BottomNavigationBarItem(
+                      icon: IconButton(
+                        icon: const Icon(
+                          Icons.person,
+                          color: Color(0xFF062833),
+                          size: 30,
+                        ),
+                        onPressed: () => {
+                          scaffoldKey.currentState?.openDrawer(),
+                        },
                       ),
-                      onPressed: () => {
-                        scaffoldKey.currentState?.openDrawer(),
-                      },
-                    ),
-                    label: ''),
-                BottomNavigationBarItem(
-                    icon: IconButton(
-                      icon: const Icon(
-                        Icons.home_rounded,
-                        color: Color(0xFFFFFFFF),
-                        size: 30,
+                      label: ''),
+                  BottomNavigationBarItem(
+                      icon: IconButton(
+                        icon: const Icon(
+                          Icons.home_rounded,
+                          color: Color(0xFFFFFFFF),
+                          size: 30,
+                        ),
+                        onPressed: () => {},
                       ),
-                      onPressed: () => {},
-                    ),
-                    label: ''),
-              ],
+                      label: ''),
+                ],
+              ),
             ),
           ),
         ),

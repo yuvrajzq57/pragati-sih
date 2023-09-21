@@ -1,3 +1,4 @@
+import 'package:get/get.dart';
 import 'package:pragati/MainScreens/loginScreen.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:pragati/MainScreens/mainPage.dart';
@@ -45,7 +46,7 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
                 height: 20.0,
               ),
               Text(
-                "Pragati",
+                "pragati".tr,
                 style: GoogleFonts.poppins(
                   textStyle: TextStyle(
                     fontSize: 35.0,

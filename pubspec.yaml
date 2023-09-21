@@ -55,6 +55,12 @@ dependencies:
   http: ^1.1.0
   url_launcher: ^6.1.14
   get: ^4.0.0
+  quickalert: ^1.0.2
+  flutter_slidable: ^1.2.0
+  hive: ^2.2.3
+  hive_flutter: ^1.1.0
+  flutter_heatmap_calendar: ^1.0.5
+
 
 dev_dependencies:
   flutter_test:
@@ -86,6 +92,15 @@ flutter:
     - images/bot.png
     - images/game.png
     - images/logo.png
+    - images/tictac.png
+    - images/bg.png
+    - images/clock.png
+    - images/circle.png
+    - images/heart.png
+    - images/hidden.png
+    - images/star.png
+    - images/triangle.png
+
 
 
   # An image asset can refer to one or more resolution-specific "variants", see
