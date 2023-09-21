@@ -14,8 +14,8 @@ class ChatMessageWidget extends StatelessWidget {
       margin: const EdgeInsets.symmetric(vertical: 10.0),
       padding: const EdgeInsets.all(16),
       color: chatMessageType == ChatMessageType.bot
-          ? Colors.black38
-          : Colors.lightGreen,
+          ? Color.fromARGB(255, 131, 187, 205)
+          : Color.fromARGB(255, 142, 212, 223),
       child: Row(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: <Widget>[
@@ -25,8 +25,7 @@ class ChatMessageWidget extends StatelessWidget {
                   child: CircleAvatar(
                     backgroundColor: const Color.fromRGBO(16, 163, 127, 1),
                     child: Image.asset(
-                      'assets/bot.png',
-                      color: Colors.white,
+                      'images/bot.png',
                       scale: 1.5,
                     ),
                   ),

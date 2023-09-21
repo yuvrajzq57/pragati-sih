@@ -8,13 +8,14 @@ import 'package:pragati/utilities/model.dart';
 
 class ChatPage extends StatefulWidget {
   static const String idScreen = "chatscreen";
-  const ChatPage({super.key});
+  ChatPage({super.key});
 
   @override
   State<ChatPage> createState() => _ChatPageState();
 }
 
 class _ChatPageState extends State<ChatPage> {
+  GlobalKey<ScaffoldState> scaffoldKey = GlobalKey<ScaffoldState>();
   final _textController = TextEditingController();
   final _scrollController = ScrollController();
   final List<ChatMessage> _messages = [];
@@ -29,54 +30,126 @@ class _ChatPageState extends State<ChatPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        leading: BackButton(
-          onPressed: () => Navigator.pushNamedAndRemoveUntil(
-              context, MainScreen.idScreen, (route) => false),
-        ),
-        title: const Padding(
-            padding: EdgeInsets.fromLTRB(30, 0, 0, 0),
-            child: Row(
-              children: [
-                Text(
-                  "Sakhi - Chat Bot",
-                  maxLines: 2,
-                  textAlign: TextAlign.center,
-                  style: TextStyle(color: Colors.white),
-                ),
-              ],
-            )),
-        backgroundColor: Color.fromARGB(255, 37, 142, 171),
-      ),
-      backgroundColor: Color.fromARGB(255, 217, 235, 241),
-      body: SafeArea(
-        child: Column(
-          children: [
-            Expanded(
-              child: _buildList(),
-            ),
-            Visibility(
-              visible: isLoading,
-              child: const Padding(
-                padding: EdgeInsets.all(8.0),
-                child: CircularProgressIndicator(
-                  color: Color.fromARGB(255, 58, 57, 57),
-                ),
-              ),
-            ),
-            Padding(
-              padding: const EdgeInsets.all(8.0),
+        key: scaffoldKey,
+        appBar: AppBar(
+          leading: BackButton(
+            onPressed: () => Navigator.pushNamedAndRemoveUntil(
+                context, MainScreen.idScreen, (route) => false),
+          ),
+          title: const Padding(
+              padding: EdgeInsets.fromLTRB(30, 0, 0, 0),
               child: Row(
                 children: [
-                  _buildInput(),
-                  _buildSubmit(),
+                  Text(
+                    "Sakhi - Chat Bot",
+                    maxLines: 2,
+                    textAlign: TextAlign.center,
+                    style: TextStyle(color: Colors.white),
+                  ),
                 ],
-              ),
-            ),
-          ],
+              )),
+          backgroundColor: Color.fromARGB(255, 37, 142, 171),
         ),
-      ),
-    );
+        backgroundColor: Color.fromARGB(255, 217, 235, 241),
+        body: SafeArea(
+          child: Column(
+            children: [
+              Expanded(
+                child: _buildList(),
+              ),
+              Visibility(
+                visible: isLoading,
+                child: const Padding(
+                  padding: EdgeInsets.all(8.0),
+                  child: CircularProgressIndicator(
+                    color: Color.fromARGB(255, 58, 57, 57),
+                  ),
+                ),
+              ),
+              Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Row(
+                  children: [
+                    _buildInput(),
+                    _buildSubmit(),
+                  ],
+                ),
+              ),
+            ],
+          ),
+        ),
+        bottomNavigationBar: SizedBox(
+          height: 78,
+          child: BottomNavigationBar(
+            backgroundColor: Color.fromARGB(255, 139, 199, 219),
+            selectedItemColor: Colors.green,
+            items: [
+              BottomNavigationBarItem(
+                  icon: IconButton(
+                    icon: const Icon(
+                      Icons.home,
+                      color: Color(0xFF062833),
+                      size: 30,
+                    ),
+                    onPressed: () => {
+                      Navigator.pushNamedAndRemoveUntil(
+                          context, MainScreen.idScreen, (route) => false),
+                    },
+                  ),
+                  label: ''),
+              BottomNavigationBarItem(
+                  icon: IconButton(
+                    icon: const Icon(
+                      Icons.graphic_eq_rounded,
+                      color: Color(0xFF062833),
+                      size: 30,
+                    ),
+                    onPressed: () => {
+                      Navigator.pushNamedAndRemoveUntil(
+                          context, ChatPage.idScreen, (route) => false),
+                      // scaffoldKey.currentState?.openDrawer(),
+                    },
+                  ),
+                  label: ''),
+              BottomNavigationBarItem(
+                  icon: IconButton(
+                    icon: const Icon(
+                      Icons.person,
+                      color: Color.fromARGB(255, 0, 0, 0),
+                      size: 30,
+                    ),
+                    onPressed: () => {
+                      scaffoldKey.currentState?.openDrawer(),
+                    },
+                  ),
+                  label: ''),
+              BottomNavigationBarItem(
+                  icon: IconButton(
+                    icon: const Icon(
+                      Icons.compare_arrows_sharp,
+                      color: Color.fromARGB(255, 0, 0, 0),
+                      size: 30,
+                    ),
+                    onPressed: () => {
+                      scaffoldKey.currentState?.openDrawer(),
+                    },
+                  ),
+                  label: ''),
+              BottomNavigationBarItem(
+                  icon: IconButton(
+                    icon: const Icon(
+                      Icons.radio_button_on_rounded,
+                      color: Color.fromARGB(255, 0, 0, 0),
+                      size: 30,
+                    ),
+                    onPressed: () => {
+                      scaffoldKey.currentState?.openDrawer(),
+                    },
+                  ),
+                  label: ''),
+            ],
+          ),
+        ));
   }
 
   Widget _buildSubmit() {
@@ -132,7 +205,8 @@ class _ChatPageState extends State<ChatPage> {
         style: const TextStyle(color: Color.fromARGB(255, 255, 255, 255)),
         controller: _textController,
         decoration: const InputDecoration(
-          fillColor: Color.fromARGB(255, 149, 154, 149),
+          hoverColor: Color.fromARGB(255, 85, 149, 209),
+          // fillColor: Color.fromARGB(255, 85, 149, 209),
           filled: true,
           border: InputBorder.none,
           focusedBorder: InputBorder.none,

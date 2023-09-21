@@ -1,33 +1,35 @@
-import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
+import 'dart:convert';
+
 import 'package:pragati/MainScreens/mainPage.dart';
 
-class VideoRecommendationScreen extends StatefulWidget {
-  static const String idScreen = "videoreco";
+class RecommendationScreen extends StatefulWidget {
+  static const String idScreen = "vcccontact";
+  const RecommendationScreen({super.key});
+
   @override
-  _VideoRecommendationScreenState createState() =>
-      _VideoRecommendationScreenState();
+  State<RecommendationScreen> createState() => _RecommendationScreenState();
 }
 
-class _VideoRecommendationScreenState extends State<VideoRecommendationScreen> {
+class _RecommendationScreenState extends State<RecommendationScreen> {
   TextEditingController _searchController = TextEditingController();
-  List<String> _recommendedUrls = [];
+  List<Map<String, dynamic>> _recommendedVideos = [];
 
-  void _getRecommendations(String query) async {
-    final response = await http.post(
-      Uri.parse(
-          'http://54.236.233.87/recommend'), // Replace with your Python server address
-      headers: {'Content-Type': 'application/json'},
-      body: jsonEncode({'search_query': query}),
-    );
+  void _fetchRecommendedVideos(String searchQuery) async {
+    final response = await http.get(
+        Uri.parse('http://127.0.0.1:5000/get_recommendations/$searchQuery'));
 
     if (response.statusCode == 200) {
+      final List<dynamic> responseBody = json.decode(response.body);
       setState(() {
-        _recommendedUrls = List<String>.from(json.decode(response.body));
+        _recommendedVideos = List<Map<String, dynamic>>.from(responseBody);
       });
     } else {
-      // Handle API error
+      setState(() {
+        _recommendedVideos = [];
+      });
+      print('Failed to load recommended videos');
     }
   }
 
@@ -35,44 +37,45 @@ class _VideoRecommendationScreenState extends State<VideoRecommendationScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        leading: BackButton(
-          onPressed: () => Navigator.pushNamedAndRemoveUntil(
-              context, MainScreen.idScreen, (route) => false),
+        title: IconButton(
+          icon: const Icon(
+            Icons.arrow_back,
+            color: Color(0xFFFFFFFF),
+          ),
+          onPressed: () => {
+            Navigator.pushNamedAndRemoveUntil(
+                context, MainScreen.idScreen, (route) => false),
+          },
         ),
-        title: Text('Video Recommendations'),
       ),
       body: Column(
-        children: [
+        children: <Widget>[
           Padding(
-            padding: const EdgeInsets.all(16.0),
+            padding: const EdgeInsets.all(8.0),
             child: TextField(
               controller: _searchController,
               decoration: InputDecoration(
-                labelText: 'Enter your search query',
-                border: OutlineInputBorder(),
+                labelText: 'Search Videos',
+                suffixIcon: IconButton(
+                  icon: Icon(Icons.search),
+                  onPressed: () {
+                    String searchQuery = _searchController.text;
+                    if (searchQuery.isNotEmpty) {
+                      _fetchRecommendedVideos(searchQuery);
+                    }
+                  },
+                ),
               ),
             ),
           ),
-          ElevatedButton(
-            onPressed: () {
-              final query = _searchController.text;
-              if (query.isNotEmpty) {
-                _getRecommendations(query);
-              }
-            },
-            child: Text('Get Recommendations'),
-          ),
           Expanded(
             child: ListView.builder(
-              itemCount: _recommendedUrls.length,
-              itemBuilder: (context, index) {
-                final url = _recommendedUrls[index];
+              itemCount: _recommendedVideos.length,
+              itemBuilder: (BuildContext context, int index) {
+                final video = _recommendedVideos[index];
                 return ListTile(
-                  title: Text('Recommended Video #${index + 1}'),
-                  subtitle: Text(url),
-                  onTap: () {
-                    // Open the video URL in a web browser or video player
-                  },
+                  title: Text(video['Title']),
+                  subtitle: Text(video['URL']),
                 );
               },
             ),
@@ -82,3 +85,29 @@ class _VideoRecommendationScreenState extends State<VideoRecommendationScreen> {
     );
   }
 }
+
+// class _MyHomePageState extends State<MyHomePage> {
+//   TextEditingController _searchController = TextEditingController();
+//   List<Map<String, dynamic>> _recommendedVideos = [];
+
+//   void _fetchRecommendedVideos(String searchQuery) async {
+//     final response = await http.get(Uri.parse('http://your_flask_server_ip:5000/get_recommendations/$searchQuery'));
+
+//     if (response.statusCode == 200) {
+//       final List<dynamic> responseBody = json.decode(response.body);
+//       setState(() {
+//         _recommendedVideos = List<Map<String, dynamic>>.from(responseBody);
+//       });
+//     } else {
+//       setState(() {
+//         _recommendedVideos = [];
+//       });
+//       print('Failed to load recommended videos');
+//     }
+//   }
+
+//   @override
+//   Widget build(BuildContext context) {
+//     return 
+//   }
+// }

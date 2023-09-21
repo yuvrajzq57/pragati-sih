@@ -66,8 +66,7 @@ class MyApp extends StatelessWidget {
         ScoreScreen.idScreen: (context) => ScoreScreen(),
         FlashCardGame.idScreen: (context) => FlashCardGame(),
         ProgressTracker.idScreen: (context) => ProgressTracker(),
-        VideoRecommendationScreen.idScreen: (context) =>
-            VideoRecommendationScreen(),
+        RecommendationScreen.idScreen: (context) => RecommendationScreen(),
         FinancialPlan.idScreen: (context) => FinancialPlan(),
       },
       debugShowCheckedModeBanner: false,
