@@ -11,6 +11,7 @@ import 'package:pragati/GameComponentsQuiz/gameScreens/score_screen.dart';
 import 'package:pragati/GameComponentsQuiz/gameScreens/start_screen.dart';
 import 'package:pragati/MainScreens/chat_screen.dart';
 import 'package:pragati/MainScreens/contactScreen.dart';
+import 'package:pragati/MainScreens/financialScreen.dart';
 import 'package:pragati/MainScreens/gamesScreen.dart';
 import 'package:pragati/MainScreens/getStartedPage.dart';
 import 'package:pragati/MainScreens/landingPage.dart';
@@ -67,6 +68,7 @@ class MyApp extends StatelessWidget {
         ProgressTracker.idScreen: (context) => ProgressTracker(),
         VideoRecommendationScreen.idScreen: (context) =>
             VideoRecommendationScreen(),
+        FinancialPlan.idScreen: (context) => FinancialPlan(),
       },
       debugShowCheckedModeBanner: false,
     );

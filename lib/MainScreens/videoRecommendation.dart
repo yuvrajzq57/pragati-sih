@@ -17,7 +17,7 @@ class _VideoRecommendationScreenState extends State<VideoRecommendationScreen> {
   void _getRecommendations(String query) async {
     final response = await http.post(
       Uri.parse(
-          'http://127.0.0.1:5000/recommend'), // Replace with your Python server address
+          'http://54.236.233.87/recommend'), // Replace with your Python server address
       headers: {'Content-Type': 'application/json'},
       body: jsonEncode({'search_query': query}),
     );
