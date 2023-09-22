@@ -18,7 +18,7 @@ class _GamesScreenState extends State<GamesScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.white,
+        backgroundColor: const Color.fromARGB(255, 9, 9, 9),
         leading: BackButton(
           onPressed: () => Navigator.pushNamedAndRemoveUntil(
               context, MainScreen.idScreen, (route) => false),

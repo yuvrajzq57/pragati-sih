@@ -36,1281 +36,592 @@ class _FinancialPlanState extends State<FinancialPlan> {
         body: SingleChildScrollView(
           child: Padding(
             padding: const EdgeInsets.all(12.0),
-            child: Container(
-              child: Column(
-                children: [
-                  SizedBox(
-                    height: 30,
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.all(10.0),
-                    child: Row(
-                      children: [
-                        Text("JOBS 101",
-                            style: GoogleFonts.poppins(
-                                textStyle: const TextStyle(
-                                    fontSize: 25,
-                                    fontWeight: FontWeight.w700,
-                                    color: Color.fromARGB(255, 40, 38, 38)))),
-                        SizedBox(
-                          width: 30,
-                        ),
-                      ],
-                    ),
-                  ),
-                  SizedBox(
-                    height: 30,
-                  ),
-                  CarouselSlider(
-                    items: [
-                      GestureDetector(
-                        child: Container(
-                          // ignore: sort_child_properties_last
-                          child: Column(
-                            children: [
-                              const SizedBox(
-                                height: 48,
-                              ),
-                              Row(
-                                children: [
-                                  const SizedBox(
-                                    width: 20,
-                                  ),
-                                  Text(
-                                    "schlor".tr,
-                                    style: GoogleFonts.poppins(
-                                        textStyle: const TextStyle(
-                                            fontSize: 20,
-                                            fontWeight: FontWeight.w700,
-                                            color: Color.fromARGB(
-                                                255, 40, 38, 38))),
-                                  ),
-                                  const SizedBox(
-                                    width: 45,
-                                  ),
-                                ],
-                              ),
-                              Padding(
-                                padding: const EdgeInsets.fromLTRB(20, 0, 0, 0),
-                                child: Row(
-                                  children: [
-                                    const SizedBox(
-                                      height: 35,
-                                    ),
-                                    Text(
-                                      "More  ",
-                                      style: GoogleFonts.poppins(
-                                          textStyle: const TextStyle(
-                                              fontSize: 15,
-                                              fontWeight: FontWeight.w500,
-                                              color: Color(0xFF0D3C4B))),
-                                    ),
-                                    const Row(
-                                      mainAxisAlignment:
-                                          MainAxisAlignment.spaceEvenly,
-                                      // ignore: prefer_const_literals_to_create_immutables
-                                      children: [
-                                        SizedBox(
-                                          width: 19,
-                                        ),
-                                        Icon(Icons.arrow_circle_right),
-                                        SizedBox(
-                                          width: 100,
-                                        ),
-                                      ],
-                                    ),
-                                  ],
-                                ),
-                              ),
-                              const Row(
-                                children: [
-                                  SizedBox(
-                                    width: 220,
-                                  ),
-                                ],
-                              ),
-                            ],
-                          ),
-                          height: 200,
-                          width: 200,
-                          decoration: const BoxDecoration(
-                            gradient: LinearGradient(
-                              begin: Alignment.topRight,
-                              end: Alignment.bottomLeft,
-                              colors: [
-                                Color.fromARGB(255, 221, 230, 238),
-                                Color.fromARGB(255, 145, 226, 238),
-                              ],
-                            ),
-                            // color: Color(0xFFA7C5CE),
-                            boxShadow: [
-                              BoxShadow(
-                                  blurRadius: 14.0,
-                                  color: Color.fromARGB(255, 198, 194, 194),
-                                  offset: Offset(
-                                    0,
-                                    0,
-                                  )),
-                            ],
-                            borderRadius: BorderRadius.all(
-                              Radius.circular(12),
-                            ),
-                          ),
-                        ),
-                        onTap: () {},
-                      ),
-                      GestureDetector(
-                        child: Container(
-                          // ignore: sort_child_properties_last
-                          child: Column(
-                            children: [
-                              const SizedBox(
-                                height: 48,
-                              ),
-                              Row(
-                                children: [
-                                  const SizedBox(
-                                    width: 20,
-                                  ),
-                                  Text(
-                                    "schlor".tr,
-                                    style: GoogleFonts.poppins(
-                                        textStyle: const TextStyle(
-                                            fontSize: 25,
-                                            fontWeight: FontWeight.w700,
-                                            color: Color.fromARGB(
-                                                255, 40, 38, 38))),
-                                  ),
-                                  const SizedBox(
-                                    width: 45,
-                                  ),
-                                ],
-                              ),
-                              Padding(
-                                padding: const EdgeInsets.fromLTRB(20, 0, 0, 0),
-                                child: Row(
-                                  children: [
-                                    const SizedBox(
-                                      height: 35,
-                                    ),
-                                    Text(
-                                      "More  ",
-                                      style: GoogleFonts.poppins(
-                                          textStyle: const TextStyle(
-                                              fontSize: 15,
-                                              fontWeight: FontWeight.w500,
-                                              color: Color(0xFF0D3C4B))),
-                                    ),
-                                    const Row(
-                                      mainAxisAlignment:
-                                          MainAxisAlignment.spaceEvenly,
-                                      // ignore: prefer_const_literals_to_create_immutables
-                                      children: [
-                                        SizedBox(
-                                          width: 19,
-                                        ),
-                                        Icon(Icons.arrow_circle_right),
-                                        SizedBox(
-                                          width: 100,
-                                        ),
-                                      ],
-                                    ),
-                                  ],
-                                ),
-                              ),
-                              const Row(
-                                children: [
-                                  SizedBox(
-                                    width: 220,
-                                  ),
-                                ],
-                              ),
-                            ],
-                          ),
-                          height: 200,
-                          width: 200,
-                          decoration: const BoxDecoration(
-                            gradient: LinearGradient(
-                              begin: Alignment.topRight,
-                              end: Alignment.bottomLeft,
-                              colors: [
-                                Color.fromARGB(255, 221, 230, 238),
-                                Color.fromARGB(255, 202, 238, 145),
-                              ],
-                            ),
-                            // color: Color(0xFFA7C5CE),
-                            boxShadow: [
-                              BoxShadow(
-                                  blurRadius: 14.0,
-                                  color: Color.fromARGB(255, 198, 194, 194),
-                                  offset: Offset(
-                                    0,
-                                    0,
-                                  )),
-                            ],
-                            borderRadius: BorderRadius.all(
-                              Radius.circular(12),
-                            ),
-                          ),
-                        ),
-                        onTap: () {},
-                      ),
-                      GestureDetector(
-                        child: Container(
-                          // ignore: sort_child_properties_last
-                          child: Column(
-                            children: [
-                              const SizedBox(
-                                height: 48,
-                              ),
-                              Row(
-                                children: [
-                                  const SizedBox(
-                                    width: 20,
-                                  ),
-                                  Text(
-                                    "schlor".tr,
-                                    style: GoogleFonts.poppins(
-                                        textStyle: const TextStyle(
-                                            fontSize: 25,
-                                            fontWeight: FontWeight.w700,
-                                            color: Color.fromARGB(
-                                                255, 40, 38, 38))),
-                                  ),
-                                  const SizedBox(
-                                    width: 45,
-                                  ),
-                                ],
-                              ),
-                              Padding(
-                                padding: const EdgeInsets.fromLTRB(20, 0, 0, 0),
-                                child: Row(
-                                  children: [
-                                    const SizedBox(
-                                      height: 35,
-                                    ),
-                                    Text(
-                                      "More  ",
-                                      style: GoogleFonts.poppins(
-                                          textStyle: const TextStyle(
-                                              fontSize: 15,
-                                              fontWeight: FontWeight.w500,
-                                              color: Color(0xFF0D3C4B))),
-                                    ),
-                                    const Row(
-                                      mainAxisAlignment:
-                                          MainAxisAlignment.spaceEvenly,
-                                      // ignore: prefer_const_literals_to_create_immutables
-                                      children: [
-                                        SizedBox(
-                                          width: 19,
-                                        ),
-                                        Icon(Icons.arrow_circle_right),
-                                        SizedBox(
-                                          width: 100,
-                                        ),
-                                      ],
-                                    ),
-                                  ],
-                                ),
-                              ),
-                              const Row(
-                                children: [
-                                  SizedBox(
-                                    width: 220,
-                                  ),
-                                ],
-                              ),
-                            ],
-                          ),
-                          height: 200,
-                          width: 200,
-                          decoration: const BoxDecoration(
-                            gradient: LinearGradient(
-                              begin: Alignment.topRight,
-                              end: Alignment.bottomLeft,
-                              colors: [
-                                Color.fromARGB(255, 221, 230, 238),
-                                Color.fromARGB(255, 238, 196, 145),
-                              ],
-                            ),
-                            // color: Color(0xFFA7C5CE),
-                            boxShadow: [
-                              BoxShadow(
-                                  blurRadius: 14.0,
-                                  color: Color.fromARGB(255, 198, 194, 194),
-                                  offset: Offset(
-                                    0,
-                                    0,
-                                  )),
-                            ],
-                            borderRadius: BorderRadius.all(
-                              Radius.circular(12),
-                            ),
-                          ),
-                        ),
-                        onTap: () {},
-                      ),
-                      GestureDetector(
-                        child: Container(
-                          // ignore: sort_child_properties_last
-                          child: Column(
-                            children: [
-                              const SizedBox(
-                                height: 48,
-                              ),
-                              Row(
-                                children: [
-                                  const SizedBox(
-                                    width: 20,
-                                  ),
-                                  Text(
-                                    "schlor".tr,
-                                    style: GoogleFonts.poppins(
-                                        textStyle: const TextStyle(
-                                            fontSize: 25,
-                                            fontWeight: FontWeight.w700,
-                                            color: Color.fromARGB(
-                                                255, 40, 38, 38))),
-                                  ),
-                                  const SizedBox(
-                                    width: 45,
-                                  ),
-                                ],
-                              ),
-                              Padding(
-                                padding: const EdgeInsets.fromLTRB(20, 0, 0, 0),
-                                child: Row(
-                                  children: [
-                                    const SizedBox(
-                                      height: 35,
-                                    ),
-                                    Text(
-                                      "More  ",
-                                      style: GoogleFonts.poppins(
-                                          textStyle: const TextStyle(
-                                              fontSize: 15,
-                                              fontWeight: FontWeight.w500,
-                                              color: Color(0xFF0D3C4B))),
-                                    ),
-                                    const Row(
-                                      mainAxisAlignment:
-                                          MainAxisAlignment.spaceEvenly,
-                                      // ignore: prefer_const_literals_to_create_immutables
-                                      children: [
-                                        SizedBox(
-                                          width: 19,
-                                        ),
-                                        Icon(Icons.arrow_circle_right),
-                                        SizedBox(
-                                          width: 100,
-                                        ),
-                                      ],
-                                    ),
-                                  ],
-                                ),
-                              ),
-                              const Row(
-                                children: [
-                                  SizedBox(
-                                    width: 220,
-                                  ),
-                                ],
-                              ),
-                            ],
-                          ),
-                          height: 200,
-                          width: 200,
-                          decoration: const BoxDecoration(
-                            gradient: LinearGradient(
-                              begin: Alignment.topRight,
-                              end: Alignment.bottomLeft,
-                              colors: [
-                                Color.fromARGB(255, 221, 230, 238),
-                                Color.fromARGB(255, 145, 237, 163),
-                              ],
-                            ),
-                            // color: Color(0xFFA7C5CE),
-                            boxShadow: [
-                              BoxShadow(
-                                  blurRadius: 14.0,
-                                  color: Color.fromARGB(255, 198, 194, 194),
-                                  offset: Offset(
-                                    0,
-                                    0,
-                                  )),
-                            ],
-                            borderRadius: BorderRadius.all(
-                              Radius.circular(12),
-                            ),
-                          ),
-                        ),
-                        onTap: () {},
+            child: Column(
+              children: [
+                SizedBox(
+                  height: 30,
+                ),
+                Padding(
+                  padding: const EdgeInsets.all(10.0),
+                  child: Row(
+                    children: [
+                      Text("JOBS 101",
+                          style: GoogleFonts.poppins(
+                              textStyle: const TextStyle(
+                                  fontSize: 25,
+                                  fontWeight: FontWeight.w700,
+                                  color: Color.fromARGB(255, 40, 38, 38)))),
+                      SizedBox(
+                        width: 30,
                       ),
                     ],
-                    options: CarouselOptions(
-                      height: 154.0,
-                      enlargeCenterPage: true,
-                      autoPlay: true,
-                      aspectRatio: 16 / 9,
-                      autoPlayCurve: Curves.fastOutSlowIn,
-                      enableInfiniteScroll: true,
-                      autoPlayAnimationDuration:
-                          const Duration(milliseconds: 800),
-                      viewportFraction: 0.6,
+                  ),
+                ),
+                SizedBox(
+                  height: 30,
+                ),
+                CarouselSlider(
+                  items: [
+                    GestureDetector(
+                      child: Container(
+                        height: 800,
+                        width: 200,
+                        child: Column(
+                          children: [
+                            const SizedBox(
+                              height: 40,
+                            ),
+                            Image.asset(
+                              "images/t1.png",
+                              height: 120,
+                            ),
+                            SizedBox(
+                              height: 20,
+                            ),
+                            Text(
+                              "Carrier Scope".tr,
+                              style: GoogleFonts.poppins(
+                                  textStyle: const TextStyle(
+                                      fontSize: 15,
+                                      fontWeight: FontWeight.w700,
+                                      color: Color.fromARGB(255, 40, 38, 38))),
+                            ),
+                          ],
+                        ),
+                        decoration: const BoxDecoration(
+                          gradient: LinearGradient(
+                            begin: Alignment.topRight,
+                            end: Alignment.bottomLeft,
+                            colors: [
+                              Color(0xFFCAA6DA),
+                              Color(0xFFE4DAE9),
+                            ],
+                          ),
+                          // color: Color(0xFFA7C5CE),
+                          boxShadow: [
+                            BoxShadow(
+                                blurRadius: 14.0,
+                                color: Color.fromARGB(255, 198, 194, 194),
+                                offset: Offset(
+                                  0,
+                                  0,
+                                )),
+                          ],
+                          borderRadius: BorderRadius.all(
+                            Radius.circular(12),
+                          ),
+                        ),
+                      ),
+                      onTap: () {
+                        // Navigator.pushNamedAndRemoveUntil(
+                        //     context, blog1.idScreen, (route) => false);
+                      },
                     ),
+                    GestureDetector(
+                      child: Container(
+                        height: 800,
+                        width: 200,
+                        child: Column(
+                          children: [
+                            const SizedBox(
+                              height: 40,
+                            ),
+                            Image.asset(
+                              "images/t1.png",
+                              height: 120,
+                            ),
+                            SizedBox(
+                              height: 30,
+                            ),
+                            Text(
+                              "Farming and tech".tr,
+                              style: GoogleFonts.poppins(
+                                  textStyle: const TextStyle(
+                                      fontSize: 15,
+                                      fontWeight: FontWeight.w700,
+                                      color: Color.fromARGB(255, 40, 38, 38))),
+                            ),
+                          ],
+                        ),
+                        decoration: const BoxDecoration(
+                          gradient: LinearGradient(
+                            begin: Alignment.topRight,
+                            end: Alignment.bottomLeft,
+                            colors: [
+                              Color(0xFFC9EDFF),
+                              Color(0xFFFFFBA7),
+                            ],
+                          ),
+                          // color: Color(0xFFA7C5CE),
+                          boxShadow: [
+                            BoxShadow(
+                                blurRadius: 14.0,
+                                color: Color.fromARGB(255, 198, 194, 194),
+                                offset: Offset(
+                                  0,
+                                  0,
+                                )),
+                          ],
+                          borderRadius: BorderRadius.all(
+                            Radius.circular(12),
+                          ),
+                        ),
+                      ),
+                      onTap: () {},
+                    ),
+                    GestureDetector(
+                      child: Container(
+                        height: 800,
+                        width: 200,
+                        child: Column(
+                          children: [
+                            const SizedBox(
+                              height: 30,
+                            ),
+                            Image.asset(
+                              "images/t3.png",
+                              height: 150,
+                            ),
+                            SizedBox(
+                              height: 5,
+                            ),
+                            Text(
+                              "Job Hunt".tr,
+                              style: GoogleFonts.poppins(
+                                  textStyle: const TextStyle(
+                                      fontSize: 15,
+                                      fontWeight: FontWeight.w700,
+                                      color: Color.fromARGB(255, 40, 38, 38))),
+                            ),
+                          ],
+                        ),
+                        decoration: const BoxDecoration(
+                          gradient: LinearGradient(
+                            begin: Alignment.topRight,
+                            end: Alignment.bottomLeft,
+                            colors: [
+                              Color(0xFF316271),
+                              Color(0xFFBFE2ED),
+                            ],
+                          ),
+                          // color: Color(0xFFA7C5CE),
+                          boxShadow: [
+                            BoxShadow(
+                                blurRadius: 14.0,
+                                color: Color.fromARGB(255, 198, 194, 194),
+                                offset: Offset(
+                                  0,
+                                  0,
+                                )),
+                          ],
+                          borderRadius: BorderRadius.all(
+                            Radius.circular(12),
+                          ),
+                        ),
+                      ),
+                      onTap: () {},
+                    ),
+                  ],
+                  options: CarouselOptions(
+                    height: 250.0,
+                    enlargeCenterPage: true,
+                    autoPlay: false,
+                    aspectRatio: 16 / 9,
+                    autoPlayCurve: Curves.fastOutSlowIn,
+                    enableInfiniteScroll: true,
+                    viewportFraction: 0.6,
                   ),
-                  SizedBox(
-                    height: 30,
-                  ),
+                ),
+                SizedBox(
+                  height: 30,
+                ),
 
-                  //STOCKS
-                  Padding(
-                    padding: const EdgeInsets.all(10.0),
-                    child: Row(
-                      children: [
-                        Text("Stocks & Market",
-                            style: GoogleFonts.poppins(
-                                textStyle: const TextStyle(
-                                    fontSize: 25,
-                                    fontWeight: FontWeight.w700,
-                                    color: Color.fromARGB(255, 40, 38, 38)))),
-                        SizedBox(
-                          width: 30,
-                        ),
-                      ],
-                    ),
-                  ),
-                  SizedBox(
-                    height: 30,
-                  ),
-                  CarouselSlider(
-                    items: [
-                      GestureDetector(
-                        child: Container(
-                          // ignore: sort_child_properties_last
-                          child: Column(
-                            children: [
-                              const SizedBox(
-                                height: 48,
-                              ),
-                              Row(
-                                children: [
-                                  const SizedBox(
-                                    width: 20,
-                                  ),
-                                  Text(
-                                    "schlor".tr,
-                                    style: GoogleFonts.poppins(
-                                        textStyle: const TextStyle(
-                                            fontSize: 25,
-                                            fontWeight: FontWeight.w700,
-                                            color: Color.fromARGB(
-                                                255, 40, 38, 38))),
-                                  ),
-                                  const SizedBox(
-                                    width: 45,
-                                  ),
-                                ],
-                              ),
-                              Padding(
-                                padding: const EdgeInsets.fromLTRB(20, 0, 0, 0),
-                                child: Row(
-                                  children: [
-                                    const SizedBox(
-                                      height: 35,
-                                    ),
-                                    Text(
-                                      "More  ",
-                                      style: GoogleFonts.poppins(
-                                          textStyle: const TextStyle(
-                                              fontSize: 15,
-                                              fontWeight: FontWeight.w500,
-                                              color: Color(0xFF0D3C4B))),
-                                    ),
-                                    const Row(
-                                      mainAxisAlignment:
-                                          MainAxisAlignment.spaceEvenly,
-                                      // ignore: prefer_const_literals_to_create_immutables
-                                      children: [
-                                        SizedBox(
-                                          width: 19,
-                                        ),
-                                        Icon(Icons.arrow_circle_right),
-                                        SizedBox(
-                                          width: 100,
-                                        ),
-                                      ],
-                                    ),
-                                  ],
-                                ),
-                              ),
-                              const Row(
-                                children: [
-                                  SizedBox(
-                                    width: 220,
-                                  ),
-                                ],
-                              ),
-                            ],
-                          ),
-                          height: 200,
-                          width: 200,
-                          decoration: const BoxDecoration(
-                            gradient: LinearGradient(
-                              begin: Alignment.topRight,
-                              end: Alignment.bottomLeft,
-                              colors: [
-                                Color.fromARGB(255, 221, 230, 238),
-                                Color.fromARGB(255, 238, 196, 145),
-                              ],
-                            ),
-                            // color: Color(0xFFA7C5CE),
-                            boxShadow: [
-                              BoxShadow(
-                                  blurRadius: 14.0,
-                                  color: Color.fromARGB(255, 198, 194, 194),
-                                  offset: Offset(
-                                    0,
-                                    0,
-                                  )),
-                            ],
-                            borderRadius: BorderRadius.all(
-                              Radius.circular(12),
-                            ),
-                          ),
-                        ),
-                        onTap: () {},
-                      ),
-                      GestureDetector(
-                        child: Container(
-                          // ignore: sort_child_properties_last
-                          child: Column(
-                            children: [
-                              const SizedBox(
-                                height: 48,
-                              ),
-                              Row(
-                                children: [
-                                  const SizedBox(
-                                    width: 20,
-                                  ),
-                                  Text(
-                                    "schlor".tr,
-                                    style: GoogleFonts.poppins(
-                                        textStyle: const TextStyle(
-                                            fontSize: 25,
-                                            fontWeight: FontWeight.w700,
-                                            color: Color.fromARGB(
-                                                255, 40, 38, 38))),
-                                  ),
-                                  const SizedBox(
-                                    width: 45,
-                                  ),
-                                ],
-                              ),
-                              Padding(
-                                padding: const EdgeInsets.fromLTRB(20, 0, 0, 0),
-                                child: Row(
-                                  children: [
-                                    const SizedBox(
-                                      height: 35,
-                                    ),
-                                    Text(
-                                      "More  ",
-                                      style: GoogleFonts.poppins(
-                                          textStyle: const TextStyle(
-                                              fontSize: 15,
-                                              fontWeight: FontWeight.w500,
-                                              color: Color(0xFF0D3C4B))),
-                                    ),
-                                    const Row(
-                                      mainAxisAlignment:
-                                          MainAxisAlignment.spaceEvenly,
-                                      // ignore: prefer_const_literals_to_create_immutables
-                                      children: [
-                                        SizedBox(
-                                          width: 19,
-                                        ),
-                                        Icon(Icons.arrow_circle_right),
-                                        SizedBox(
-                                          width: 100,
-                                        ),
-                                      ],
-                                    ),
-                                  ],
-                                ),
-                              ),
-                              const Row(
-                                children: [
-                                  SizedBox(
-                                    width: 220,
-                                  ),
-                                ],
-                              ),
-                            ],
-                          ),
-                          height: 200,
-                          width: 200,
-                          decoration: const BoxDecoration(
-                            gradient: LinearGradient(
-                              begin: Alignment.topRight,
-                              end: Alignment.bottomLeft,
-                              colors: [
-                                Color.fromARGB(255, 221, 230, 238),
-                                Color.fromARGB(255, 188, 234, 139),
-                              ],
-                            ),
-                            // color: Color(0xFFA7C5CE),
-                            boxShadow: [
-                              BoxShadow(
-                                  blurRadius: 14.0,
-                                  color: Color.fromARGB(255, 198, 194, 194),
-                                  offset: Offset(
-                                    0,
-                                    0,
-                                  )),
-                            ],
-                            borderRadius: BorderRadius.all(
-                              Radius.circular(12),
-                            ),
-                          ),
-                        ),
-                        onTap: () {},
-                      ),
-                      GestureDetector(
-                        child: Container(
-                          // ignore: sort_child_properties_last
-                          child: Column(
-                            children: [
-                              const SizedBox(
-                                height: 48,
-                              ),
-                              Row(
-                                children: [
-                                  const SizedBox(
-                                    width: 20,
-                                  ),
-                                  Text(
-                                    "schlor".tr,
-                                    style: GoogleFonts.poppins(
-                                        textStyle: const TextStyle(
-                                            fontSize: 25,
-                                            fontWeight: FontWeight.w700,
-                                            color: Color.fromARGB(
-                                                255, 40, 38, 38))),
-                                  ),
-                                  const SizedBox(
-                                    width: 45,
-                                  ),
-                                ],
-                              ),
-                              Padding(
-                                padding: const EdgeInsets.fromLTRB(20, 0, 0, 0),
-                                child: Row(
-                                  children: [
-                                    const SizedBox(
-                                      height: 35,
-                                    ),
-                                    Text(
-                                      "More  ",
-                                      style: GoogleFonts.poppins(
-                                          textStyle: const TextStyle(
-                                              fontSize: 15,
-                                              fontWeight: FontWeight.w500,
-                                              color: Color(0xFF0D3C4B))),
-                                    ),
-                                    const Row(
-                                      mainAxisAlignment:
-                                          MainAxisAlignment.spaceEvenly,
-                                      // ignore: prefer_const_literals_to_create_immutables
-                                      children: [
-                                        SizedBox(
-                                          width: 19,
-                                        ),
-                                        Icon(Icons.arrow_circle_right),
-                                        SizedBox(
-                                          width: 100,
-                                        ),
-                                      ],
-                                    ),
-                                  ],
-                                ),
-                              ),
-                              const Row(
-                                children: [
-                                  SizedBox(
-                                    width: 220,
-                                  ),
-                                ],
-                              ),
-                            ],
-                          ),
-                          height: 200,
-                          width: 200,
-                          decoration: const BoxDecoration(
-                            gradient: LinearGradient(
-                              begin: Alignment.topRight,
-                              end: Alignment.bottomLeft,
-                              colors: [
-                                Color.fromARGB(255, 221, 230, 238),
-                                Color.fromARGB(255, 137, 208, 227),
-                              ],
-                            ),
-                            // color: Color(0xFFA7C5CE),
-                            boxShadow: [
-                              BoxShadow(
-                                  blurRadius: 14.0,
-                                  color: Color.fromARGB(255, 198, 194, 194),
-                                  offset: Offset(
-                                    0,
-                                    0,
-                                  )),
-                            ],
-                            borderRadius: BorderRadius.all(
-                              Radius.circular(12),
-                            ),
-                          ),
-                        ),
-                        onTap: () {},
-                      ),
-                      GestureDetector(
-                        child: Container(
-                          // ignore: sort_child_properties_last
-                          child: Column(
-                            children: [
-                              const SizedBox(
-                                height: 48,
-                              ),
-                              Row(
-                                children: [
-                                  const SizedBox(
-                                    width: 20,
-                                  ),
-                                  Text(
-                                    "schlor".tr,
-                                    style: GoogleFonts.poppins(
-                                        textStyle: const TextStyle(
-                                            fontSize: 25,
-                                            fontWeight: FontWeight.w700,
-                                            color: Color.fromARGB(
-                                                255, 40, 38, 38))),
-                                  ),
-                                  const SizedBox(
-                                    width: 45,
-                                  ),
-                                ],
-                              ),
-                              Padding(
-                                padding: const EdgeInsets.fromLTRB(20, 0, 0, 0),
-                                child: Row(
-                                  children: [
-                                    const SizedBox(
-                                      height: 35,
-                                    ),
-                                    Text(
-                                      "More  ",
-                                      style: GoogleFonts.poppins(
-                                          textStyle: const TextStyle(
-                                              fontSize: 15,
-                                              fontWeight: FontWeight.w500,
-                                              color: Color(0xFF0D3C4B))),
-                                    ),
-                                    const Row(
-                                      mainAxisAlignment:
-                                          MainAxisAlignment.spaceEvenly,
-                                      // ignore: prefer_const_literals_to_create_immutables
-                                      children: [
-                                        SizedBox(
-                                          width: 19,
-                                        ),
-                                        Icon(Icons.arrow_circle_right),
-                                        SizedBox(
-                                          width: 100,
-                                        ),
-                                      ],
-                                    ),
-                                  ],
-                                ),
-                              ),
-                              const Row(
-                                children: [
-                                  SizedBox(
-                                    width: 220,
-                                  ),
-                                ],
-                              ),
-                            ],
-                          ),
-                          height: 200,
-                          width: 200,
-                          decoration: const BoxDecoration(
-                            gradient: LinearGradient(
-                              begin: Alignment.topRight,
-                              end: Alignment.bottomLeft,
-                              colors: [
-                                Color.fromARGB(255, 221, 230, 238),
-                                Color.fromARGB(255, 229, 145, 238),
-                              ],
-                            ),
-                            // color: Color(0xFFA7C5CE),
-                            boxShadow: [
-                              BoxShadow(
-                                  blurRadius: 14.0,
-                                  color: Color.fromARGB(255, 198, 194, 194),
-                                  offset: Offset(
-                                    0,
-                                    0,
-                                  )),
-                            ],
-                            borderRadius: BorderRadius.all(
-                              Radius.circular(12),
-                            ),
-                          ),
-                        ),
-                        onTap: () {},
+                //STOCKS
+                Padding(
+                  padding: const EdgeInsets.all(10.0),
+                  child: Row(
+                    children: [
+                      Text("Stocks & Market",
+                          style: GoogleFonts.poppins(
+                              textStyle: const TextStyle(
+                                  fontSize: 25,
+                                  fontWeight: FontWeight.w700,
+                                  color: Color.fromARGB(255, 40, 38, 38)))),
+                      SizedBox(
+                        width: 30,
                       ),
                     ],
-                    options: CarouselOptions(
-                      height: 154.0,
-                      enlargeCenterPage: true,
-                      autoPlay: true,
-                      aspectRatio: 16 / 9,
-                      autoPlayCurve: Curves.fastOutSlowIn,
-                      enableInfiniteScroll: true,
-                      autoPlayAnimationDuration:
-                          const Duration(milliseconds: 800),
-                      viewportFraction: 0.6,
-                    ),
                   ),
+                ),
+                SizedBox(
+                  height: 30,
+                ),
+                CarouselSlider(
+                  items: [
+                    GestureDetector(
+                      child: Container(
+                        height: 800,
+                        width: 200,
+                        child: Column(
+                          children: [
+                            const SizedBox(
+                              height: 30,
+                            ),
+                            Image.asset(
+                              "images/t4.png",
+                              height: 150,
+                            ),
+                            SizedBox(
+                              height: 5,
+                            ),
+                            Text(
+                              "Intra-Day Trading".tr,
+                              style: GoogleFonts.poppins(
+                                  textStyle: const TextStyle(
+                                      fontSize: 15,
+                                      fontWeight: FontWeight.w700,
+                                      color: Color(0xFF46183C))),
+                            ),
+                          ],
+                        ),
+                        decoration: const BoxDecoration(
+                          gradient: LinearGradient(
+                            begin: Alignment.topRight,
+                            end: Alignment.bottomLeft,
+                            colors: [
+                              Color(0xFF5AAAC3),
+                              Color(0xFFE1DC70),
+                            ],
+                          ),
+                          // color: Color(0xFFA7C5CE),
+                          boxShadow: [
+                            BoxShadow(
+                                blurRadius: 14.0,
+                                color: Color.fromARGB(255, 198, 194, 194),
+                                offset: Offset(
+                                  0,
+                                  0,
+                                )),
+                          ],
+                          borderRadius: BorderRadius.all(
+                            Radius.circular(12),
+                          ),
+                        ),
+                      ),
+                      onTap: () {
+                        // Navigator.pushNamedAndRemoveUntil(
+                        //     context, blog2.idScreen, (route) => false);
+                      },
+                    ),
+                    GestureDetector(
+                      child: Container(
+                        height: 800,
+                        width: 200,
+                        child: Column(
+                          children: [
+                            const SizedBox(
+                              height: 30,
+                            ),
+                            Image.asset(
+                              "images/t5.png",
+                              height: 150,
+                            ),
+                            SizedBox(
+                              height: 5,
+                            ),
+                            Text(
+                              "Fundamental analysis".tr,
+                              style: GoogleFonts.poppins(
+                                  textStyle: const TextStyle(
+                                      fontSize: 15,
+                                      fontWeight: FontWeight.w700,
+                                      color: Color.fromARGB(255, 40, 38, 38))),
+                            ),
+                          ],
+                        ),
+                        decoration: const BoxDecoration(
+                          gradient: LinearGradient(
+                            begin: Alignment.topRight,
+                            end: Alignment.bottomLeft,
+                            colors: [
+                              Color(0xFF9A4988),
+                              Color(0xFFF7B9E9),
+                            ],
+                          ),
+                          // color: Color(0xFFA7C5CE),
+                          boxShadow: [
+                            BoxShadow(
+                                blurRadius: 14.0,
+                                color: Color.fromARGB(255, 198, 194, 194),
+                                offset: Offset(
+                                  0,
+                                  0,
+                                )),
+                          ],
+                          borderRadius: BorderRadius.all(
+                            Radius.circular(12),
+                          ),
+                        ),
+                      ),
+                      onTap: () {},
+                    ),
+                    GestureDetector(
+                      child: Container(
+                        height: 800,
+                        width: 200,
+                        child: Column(
+                          children: [
+                            const SizedBox(
+                              height: 40,
+                            ),
+                            Image.asset(
+                              "images/t6.png",
+                              height: 120,
+                            ),
+                            SizedBox(
+                              height: 20,
+                            ),
+                            Text(
+                              "Cryptocurrency".tr,
+                              style: GoogleFonts.poppins(
+                                  textStyle: const TextStyle(
+                                      fontSize: 15,
+                                      fontWeight: FontWeight.w700,
+                                      color: Color.fromARGB(255, 40, 38, 38))),
+                            ),
+                          ],
+                        ),
+                        decoration: const BoxDecoration(
+                          gradient: LinearGradient(
+                            begin: Alignment.topRight,
+                            end: Alignment.bottomLeft,
+                            colors: [
+                              Color(0xFFC9EDFF),
+                              Color(0xFF68B5DC),
+                            ],
+                          ),
+                          // color: Color(0xFFA7C5CE),
+                          boxShadow: [
+                            BoxShadow(
+                                blurRadius: 14.0,
+                                color: Color.fromARGB(255, 198, 194, 194),
+                                offset: Offset(
+                                  0,
+                                  0,
+                                )),
+                          ],
+                          borderRadius: BorderRadius.all(
+                            Radius.circular(12),
+                          ),
+                        ),
+                      ),
+                      onTap: () {},
+                    ),
+                  ],
+                  options: CarouselOptions(
+                    height: 250.0,
+                    enlargeCenterPage: true,
+                    autoPlay: false,
+                    aspectRatio: 16 / 9,
+                    autoPlayCurve: Curves.fastOutSlowIn,
+                    enableInfiniteScroll: true,
+                    viewportFraction: 0.6,
+                  ),
+                ),
 
-                  //MONEY mAINTAINENCE
-                  SizedBox(
-                    height: 30,
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.all(10.0),
-                    child: Row(
-                      children: [
-                        Text("Money Maintainence",
-                            style: GoogleFonts.poppins(
-                                textStyle: const TextStyle(
-                                    fontSize: 25,
-                                    fontWeight: FontWeight.w700,
-                                    color: Color.fromARGB(255, 40, 38, 38)))),
-                        SizedBox(
-                          width: 30,
-                        ),
-                      ],
-                    ),
-                  ),
-                  SizedBox(
-                    height: 30,
-                  ),
-                  CarouselSlider(
-                    items: [
-                      GestureDetector(
-                        child: Container(
-                          // ignore: sort_child_properties_last
-                          child: Column(
-                            children: [
-                              const SizedBox(
-                                height: 48,
-                              ),
-                              Row(
-                                children: [
-                                  const SizedBox(
-                                    width: 20,
-                                  ),
-                                  Text(
-                                    "schlor".tr,
-                                    style: GoogleFonts.poppins(
-                                        textStyle: const TextStyle(
-                                            fontSize: 25,
-                                            fontWeight: FontWeight.w700,
-                                            color: Color.fromARGB(
-                                                255, 40, 38, 38))),
-                                  ),
-                                  const SizedBox(
-                                    width: 45,
-                                  ),
-                                ],
-                              ),
-                              Padding(
-                                padding: const EdgeInsets.fromLTRB(20, 0, 0, 0),
-                                child: Row(
-                                  children: [
-                                    const SizedBox(
-                                      height: 35,
-                                    ),
-                                    Text(
-                                      "More  ",
-                                      style: GoogleFonts.poppins(
-                                          textStyle: const TextStyle(
-                                              fontSize: 15,
-                                              fontWeight: FontWeight.w500,
-                                              color: Color(0xFF0D3C4B))),
-                                    ),
-                                    const Row(
-                                      mainAxisAlignment:
-                                          MainAxisAlignment.spaceEvenly,
-                                      // ignore: prefer_const_literals_to_create_immutables
-                                      children: [
-                                        SizedBox(
-                                          width: 19,
-                                        ),
-                                        Icon(Icons.arrow_circle_right),
-                                        SizedBox(
-                                          width: 100,
-                                        ),
-                                      ],
-                                    ),
-                                  ],
-                                ),
-                              ),
-                              const Row(
-                                children: [
-                                  SizedBox(
-                                    width: 220,
-                                  ),
-                                ],
-                              ),
-                            ],
-                          ),
-                          height: 200,
-                          width: 200,
-                          decoration: const BoxDecoration(
-                            gradient: LinearGradient(
-                              begin: Alignment.topRight,
-                              end: Alignment.bottomLeft,
-                              colors: [
-                                Color.fromARGB(255, 221, 230, 238),
-                                Color.fromARGB(255, 238, 196, 145),
-                              ],
-                            ),
-                            // color: Color(0xFFA7C5CE),
-                            boxShadow: [
-                              BoxShadow(
-                                  blurRadius: 14.0,
-                                  color: Color.fromARGB(255, 198, 194, 194),
-                                  offset: Offset(
-                                    0,
-                                    0,
-                                  )),
-                            ],
-                            borderRadius: BorderRadius.all(
-                              Radius.circular(12),
-                            ),
-                          ),
-                        ),
-                        onTap: () {},
-                      ),
-                      GestureDetector(
-                        child: Container(
-                          // ignore: sort_child_properties_last
-                          child: Column(
-                            children: [
-                              const SizedBox(
-                                height: 48,
-                              ),
-                              Row(
-                                children: [
-                                  const SizedBox(
-                                    width: 20,
-                                  ),
-                                  Text(
-                                    "schlor".tr,
-                                    style: GoogleFonts.poppins(
-                                        textStyle: const TextStyle(
-                                            fontSize: 25,
-                                            fontWeight: FontWeight.w700,
-                                            color: Color.fromARGB(
-                                                255, 40, 38, 38))),
-                                  ),
-                                  const SizedBox(
-                                    width: 45,
-                                  ),
-                                ],
-                              ),
-                              Padding(
-                                padding: const EdgeInsets.fromLTRB(20, 0, 0, 0),
-                                child: Row(
-                                  children: [
-                                    const SizedBox(
-                                      height: 35,
-                                    ),
-                                    Text(
-                                      "More  ",
-                                      style: GoogleFonts.poppins(
-                                          textStyle: const TextStyle(
-                                              fontSize: 15,
-                                              fontWeight: FontWeight.w500,
-                                              color: Color(0xFF0D3C4B))),
-                                    ),
-                                    const Row(
-                                      mainAxisAlignment:
-                                          MainAxisAlignment.spaceEvenly,
-                                      // ignore: prefer_const_literals_to_create_immutables
-                                      children: [
-                                        SizedBox(
-                                          width: 19,
-                                        ),
-                                        Icon(Icons.arrow_circle_right),
-                                        SizedBox(
-                                          width: 100,
-                                        ),
-                                      ],
-                                    ),
-                                  ],
-                                ),
-                              ),
-                              const Row(
-                                children: [
-                                  SizedBox(
-                                    width: 220,
-                                  ),
-                                ],
-                              ),
-                            ],
-                          ),
-                          height: 200,
-                          width: 200,
-                          decoration: const BoxDecoration(
-                            gradient: LinearGradient(
-                              begin: Alignment.topRight,
-                              end: Alignment.bottomLeft,
-                              colors: [
-                                Color.fromARGB(255, 221, 230, 238),
-                                Color.fromARGB(255, 188, 234, 139),
-                              ],
-                            ),
-                            // color: Color(0xFFA7C5CE),
-                            boxShadow: [
-                              BoxShadow(
-                                  blurRadius: 14.0,
-                                  color: Color.fromARGB(255, 198, 194, 194),
-                                  offset: Offset(
-                                    0,
-                                    0,
-                                  )),
-                            ],
-                            borderRadius: BorderRadius.all(
-                              Radius.circular(12),
-                            ),
-                          ),
-                        ),
-                        onTap: () {},
-                      ),
-                      GestureDetector(
-                        child: Container(
-                          // ignore: sort_child_properties_last
-                          child: Column(
-                            children: [
-                              const SizedBox(
-                                height: 48,
-                              ),
-                              Row(
-                                children: [
-                                  const SizedBox(
-                                    width: 20,
-                                  ),
-                                  Text(
-                                    "schlor".tr,
-                                    style: GoogleFonts.poppins(
-                                        textStyle: const TextStyle(
-                                            fontSize: 25,
-                                            fontWeight: FontWeight.w700,
-                                            color: Color.fromARGB(
-                                                255, 40, 38, 38))),
-                                  ),
-                                  const SizedBox(
-                                    width: 45,
-                                  ),
-                                ],
-                              ),
-                              Padding(
-                                padding: const EdgeInsets.fromLTRB(20, 0, 0, 0),
-                                child: Row(
-                                  children: [
-                                    const SizedBox(
-                                      height: 35,
-                                    ),
-                                    Text(
-                                      "More  ",
-                                      style: GoogleFonts.poppins(
-                                          textStyle: const TextStyle(
-                                              fontSize: 15,
-                                              fontWeight: FontWeight.w500,
-                                              color: Color(0xFF0D3C4B))),
-                                    ),
-                                    const Row(
-                                      mainAxisAlignment:
-                                          MainAxisAlignment.spaceEvenly,
-                                      // ignore: prefer_const_literals_to_create_immutables
-                                      children: [
-                                        SizedBox(
-                                          width: 19,
-                                        ),
-                                        Icon(Icons.arrow_circle_right),
-                                        SizedBox(
-                                          width: 100,
-                                        ),
-                                      ],
-                                    ),
-                                  ],
-                                ),
-                              ),
-                              const Row(
-                                children: [
-                                  SizedBox(
-                                    width: 220,
-                                  ),
-                                ],
-                              ),
-                            ],
-                          ),
-                          height: 200,
-                          width: 200,
-                          decoration: const BoxDecoration(
-                            gradient: LinearGradient(
-                              begin: Alignment.topRight,
-                              end: Alignment.bottomLeft,
-                              colors: [
-                                Color.fromARGB(255, 221, 230, 238),
-                                Color.fromARGB(255, 137, 208, 227),
-                              ],
-                            ),
-                            // color: Color(0xFFA7C5CE),
-                            boxShadow: [
-                              BoxShadow(
-                                  blurRadius: 14.0,
-                                  color: Color.fromARGB(255, 198, 194, 194),
-                                  offset: Offset(
-                                    0,
-                                    0,
-                                  )),
-                            ],
-                            borderRadius: BorderRadius.all(
-                              Radius.circular(12),
-                            ),
-                          ),
-                        ),
-                        onTap: () {},
-                      ),
-                      GestureDetector(
-                        child: Container(
-                          // ignore: sort_child_properties_last
-                          child: Column(
-                            children: [
-                              const SizedBox(
-                                height: 48,
-                              ),
-                              Row(
-                                children: [
-                                  const SizedBox(
-                                    width: 20,
-                                  ),
-                                  Text(
-                                    "schlor".tr,
-                                    style: GoogleFonts.poppins(
-                                        textStyle: const TextStyle(
-                                            fontSize: 25,
-                                            fontWeight: FontWeight.w700,
-                                            color: Color.fromARGB(
-                                                255, 40, 38, 38))),
-                                  ),
-                                  const SizedBox(
-                                    width: 45,
-                                  ),
-                                ],
-                              ),
-                              Padding(
-                                padding: const EdgeInsets.fromLTRB(20, 0, 0, 0),
-                                child: Row(
-                                  children: [
-                                    const SizedBox(
-                                      height: 35,
-                                    ),
-                                    Text(
-                                      "More  ",
-                                      style: GoogleFonts.poppins(
-                                          textStyle: const TextStyle(
-                                              fontSize: 15,
-                                              fontWeight: FontWeight.w500,
-                                              color: Color(0xFF0D3C4B))),
-                                    ),
-                                    const Row(
-                                      mainAxisAlignment:
-                                          MainAxisAlignment.spaceEvenly,
-                                      // ignore: prefer_const_literals_to_create_immutables
-                                      children: [
-                                        SizedBox(
-                                          width: 19,
-                                        ),
-                                        Icon(Icons.arrow_circle_right),
-                                        SizedBox(
-                                          width: 100,
-                                        ),
-                                      ],
-                                    ),
-                                  ],
-                                ),
-                              ),
-                              const Row(
-                                children: [
-                                  SizedBox(
-                                    width: 220,
-                                  ),
-                                ],
-                              ),
-                            ],
-                          ),
-                          height: 200,
-                          width: 200,
-                          decoration: const BoxDecoration(
-                            gradient: LinearGradient(
-                              begin: Alignment.topRight,
-                              end: Alignment.bottomLeft,
-                              colors: [
-                                Color.fromARGB(255, 221, 230, 238),
-                                Color.fromARGB(255, 229, 145, 238),
-                              ],
-                            ),
-                            // color: Color(0xFFA7C5CE),
-                            boxShadow: [
-                              BoxShadow(
-                                  blurRadius: 14.0,
-                                  color: Color.fromARGB(255, 198, 194, 194),
-                                  offset: Offset(
-                                    0,
-                                    0,
-                                  )),
-                            ],
-                            borderRadius: BorderRadius.all(
-                              Radius.circular(12),
-                            ),
-                          ),
-                        ),
-                        onTap: () {},
+                //MONEY mAINTAINENCE
+                SizedBox(
+                  height: 30,
+                ),
+                Padding(
+                  padding: const EdgeInsets.all(10.0),
+                  child: Row(
+                    children: [
+                      Text("Money Maintainence",
+                          style: GoogleFonts.poppins(
+                              textStyle: const TextStyle(
+                                  fontSize: 25,
+                                  fontWeight: FontWeight.w700,
+                                  color: Color.fromARGB(255, 40, 38, 38)))),
+                      SizedBox(
+                        width: 30,
                       ),
                     ],
-                    options: CarouselOptions(
-                      height: 154.0,
-                      enlargeCenterPage: true,
-                      autoPlay: true,
-                      aspectRatio: 16 / 9,
-                      autoPlayCurve: Curves.fastOutSlowIn,
-                      enableInfiniteScroll: true,
-                      autoPlayAnimationDuration:
-                          const Duration(milliseconds: 800),
-                      viewportFraction: 0.6,
+                  ),
+                ),
+                SizedBox(
+                  height: 30,
+                ),
+                CarouselSlider(
+                  items: [
+                    GestureDetector(
+                      child: Container(
+                        height: 800,
+                        width: 200,
+                        child: Column(
+                          children: [
+                            const SizedBox(
+                              height: 40,
+                            ),
+                            Image.asset(
+                              "images/t7.png",
+                              height: 120,
+                            ),
+                            SizedBox(
+                              height: 20,
+                            ),
+                            Text(
+                              "UPI & Digitransaction".tr,
+                              style: GoogleFonts.poppins(
+                                  textStyle: const TextStyle(
+                                      fontSize: 15,
+                                      fontWeight: FontWeight.w700,
+                                      color: Color.fromARGB(255, 40, 38, 38))),
+                            ),
+                          ],
+                        ),
+                        decoration: const BoxDecoration(
+                          gradient: LinearGradient(
+                            begin: Alignment.topRight,
+                            end: Alignment.bottomLeft,
+                            colors: [
+                              Color(0xFF32C7F6),
+                              Color(0xFFD38BFF),
+                            ],
+                          ),
+                          // color: Color(0xFFA7C5CE),
+                          boxShadow: [
+                            BoxShadow(
+                                blurRadius: 14.0,
+                                color: Color.fromARGB(255, 198, 194, 194),
+                                offset: Offset(
+                                  0,
+                                  0,
+                                )),
+                          ],
+                          borderRadius: BorderRadius.all(
+                            Radius.circular(12),
+                          ),
+                        ),
+                      ),
+                      onTap: () {
+                        // Navigator.pushNamedAndRemoveUntil(
+                        //     context, blog3.idScreen, (route) => false);
+                      },
                     ),
+                    GestureDetector(
+                      child: Container(
+                        height: 800,
+                        width: 200,
+                        child: Column(
+                          children: [
+                            const SizedBox(
+                              height: 30,
+                            ),
+                            Image.asset(
+                              "images/t8.png",
+                              height: 150,
+                            ),
+                            SizedBox(
+                              height: 10,
+                            ),
+                            Text(
+                              "Planning Money".tr,
+                              style: GoogleFonts.poppins(
+                                  textStyle: const TextStyle(
+                                      fontSize: 15,
+                                      fontWeight: FontWeight.w700,
+                                      color: Color.fromARGB(255, 40, 38, 38))),
+                            ),
+                          ],
+                        ),
+                        decoration: const BoxDecoration(
+                          gradient: LinearGradient(
+                            begin: Alignment.topRight,
+                            end: Alignment.bottomLeft,
+                            colors: [
+                              Color(0xFF6EF7DE),
+                              Color(0xFFDAC400),
+                            ],
+                          ),
+                          // color: Color(0xFFA7C5CE),
+                          boxShadow: [
+                            BoxShadow(
+                                blurRadius: 14.0,
+                                color: Color.fromARGB(255, 198, 194, 194),
+                                offset: Offset(
+                                  0,
+                                  0,
+                                )),
+                          ],
+                          borderRadius: BorderRadius.all(
+                            Radius.circular(12),
+                          ),
+                        ),
+                      ),
+                      onTap: () {},
+                    ),
+                    GestureDetector(
+                      child: Container(
+                        height: 800,
+                        width: 200,
+                        child: Column(
+                          children: [
+                            Image.asset(
+                              "images/t9.png",
+                              height: 180,
+                            ),
+                            Text(
+                              "Savings & investement".tr,
+                              style: GoogleFonts.poppins(
+                                  textStyle: const TextStyle(
+                                      fontSize: 15,
+                                      fontWeight: FontWeight.w700,
+                                      color: Color.fromARGB(255, 40, 38, 38))),
+                            ),
+                          ],
+                        ),
+                        decoration: const BoxDecoration(
+                          gradient: LinearGradient(
+                            begin: Alignment.topRight,
+                            end: Alignment.bottomLeft,
+                            colors: [
+                              Color(0xFFE4B5FA),
+                              Color(0xFFBB66E4),
+                            ],
+                          ),
+                          // color: Color(0xFFA7C5CE),
+                          boxShadow: [
+                            BoxShadow(
+                                blurRadius: 14.0,
+                                color: Color.fromARGB(255, 198, 194, 194),
+                                offset: Offset(
+                                  0,
+                                  0,
+                                )),
+                          ],
+                          borderRadius: BorderRadius.all(
+                            Radius.circular(12),
+                          ),
+                        ),
+                      ),
+                      onTap: () {},
+                    ),
+                  ],
+                  options: CarouselOptions(
+                    height: 250.0,
+                    enlargeCenterPage: true,
+                    autoPlay: false,
+                    aspectRatio: 16 / 9,
+                    autoPlayCurve: Curves.fastOutSlowIn,
+                    enableInfiniteScroll: true,
+                    viewportFraction: 0.6,
                   ),
-                  SizedBox(
-                    height: 30,
-                  ),
-                ],
-              ),
+                ),
+                SizedBox(
+                  height: 30,
+                ),
+              ],
             ),
           ),
         ));

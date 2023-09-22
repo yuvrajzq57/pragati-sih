@@ -5,8 +5,10 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:pragati/MainScreens/chat_screen.dart';
 import 'package:pragati/MainScreens/financialScreen.dart';
 import 'package:pragati/MainScreens/gamesScreen.dart';
+import 'package:pragati/MainScreens/govtJobs.dart';
 import 'package:pragati/MainScreens/sideScreen.dart';
 import 'package:pragati/MainScreens/contactScreen.dart';
+import 'package:pragati/MainScreens/stocks.dart';
 import 'package:pragati/MainScreens/videoRecommendation.dart';
 import 'package:pragati/ProgressTracker/progressTrack.dart';
 import 'package:quickalert/quickalert.dart';
@@ -227,209 +229,221 @@ class _MainScreenState extends State<MainScreen> {
                             ),
                             onTap: () {},
                           ),
-                          Container(
-                            height: 200,
-                            width: 315,
-                            decoration: BoxDecoration(
-                              gradient: LinearGradient(
-                                begin: Alignment.topRight,
-                                end: Alignment.bottomLeft,
-                                colors: [
-                                  Color.fromARGB(255, 243, 181, 185),
-                                  Color.fromARGB(255, 236, 166, 221),
-                                ],
-                              ),
-                              // image: const DecorationImage(
-                              //   image: AssetImage(
-                              //     "",
-                              //   ),
-                              //   fit: BoxFit.fill,
-                              // ),
-                              boxShadow: [
-                                BoxShadow(
-                                  blurRadius: 14.0,
-                                  color: Color.fromARGB(255, 198, 194, 194),
-                                  offset: Offset(
-                                    0,
-                                    0,
+                          GestureDetector(
+                            onTap: () {
+                              Navigator.pushNamedAndRemoveUntil(
+                                  context, GovtJobs.idScreen, (route) => false);
+                            },
+                            child: Container(
+                              height: 200,
+                              width: 315,
+                              decoration: BoxDecoration(
+                                gradient: LinearGradient(
+                                  begin: Alignment.topRight,
+                                  end: Alignment.bottomLeft,
+                                  colors: [
+                                    Color.fromARGB(255, 243, 181, 185),
+                                    Color.fromARGB(255, 236, 166, 221),
+                                  ],
+                                ),
+                                // image: const DecorationImage(
+                                //   image: AssetImage(
+                                //     "",
+                                //   ),
+                                //   fit: BoxFit.fill,
+                                // ),
+                                boxShadow: [
+                                  BoxShadow(
+                                    blurRadius: 14.0,
+                                    color: Color.fromARGB(255, 198, 194, 194),
+                                    offset: Offset(
+                                      0,
+                                      0,
+                                    ),
                                   ),
-                                ),
-                              ],
+                                ],
 
-                              borderRadius: BorderRadius.circular(12),
-                              color: const Color(0xFFB1AD37),
-                            ),
-                            child: Column(
-                              children: [
-                                const SizedBox(
-                                  height: 20,
-                                ),
-                                Row(
-                                  children: [
-                                    const SizedBox(
-                                      width: 25,
-                                    ),
-                                    Text(
-                                      "Government\nJobs",
-                                      style: GoogleFonts.poppins(
-                                        textStyle: const TextStyle(
-                                          fontWeight: FontWeight.w600,
-                                          color: Color.fromARGB(
-                                              255, 255, 255, 255),
-                                          fontSize: 26,
-                                        ),
+                                borderRadius: BorderRadius.circular(12),
+                                color: const Color(0xFFB1AD37),
+                              ),
+                              child: Column(
+                                children: [
+                                  const SizedBox(
+                                    height: 20,
+                                  ),
+                                  Row(
+                                    children: [
+                                      const SizedBox(
+                                        width: 25,
                                       ),
-                                    ),
-                                    const SizedBox(
-                                      width: 62,
-                                    ),
-                                  ],
-                                ),
-                                Row(
-                                  children: [
-                                    SizedBox(
-                                      width: 20,
-                                    ),
-                                    Container(
-                                      child: Center(
-                                        child: Text(
-                                          "Know More",
-                                          style: GoogleFonts.poppins(
-                                            textStyle: const TextStyle(
-                                              fontWeight: FontWeight.w500,
-                                              fontSize: 15,
-                                              color: Colors.white,
-                                            ),
-                                          ),
-                                        ),
-                                      ),
-                                      height: 30,
-                                      width: 120,
-                                      decoration: const BoxDecoration(
-                                        color: Color(0xFF9A4988),
-                                        boxShadow: [
-                                          BoxShadow(
-                                            blurRadius: 14.0,
-                                            color: Color.fromARGB(
-                                                255, 172, 176, 178),
-                                            offset: Offset(
-                                              10,
-                                              10,
-                                            ),
-                                          ),
-                                        ],
-                                        borderRadius: BorderRadius.all(
-                                          Radius.circular(10),
-                                        ),
-                                      ),
-                                    ),
-                                  ],
-                                ),
-                              ],
-                            ),
-                          ),
-                          Container(
-                            // ignore: sort_child_properties_last
-                            child: Column(
-                              children: [
-                                const SizedBox(
-                                  height: 25,
-                                ),
-                                Row(
-                                  mainAxisAlignment: MainAxisAlignment.start,
-                                  children: [
-                                    const SizedBox(
-                                      width: 30,
-                                    ),
-                                    Text(
-                                      "Loan's & \nIncentives",
-                                      style: GoogleFonts.poppins(
+                                      Text(
+                                        "Government\nJobs",
+                                        style: GoogleFonts.poppins(
                                           textStyle: const TextStyle(
-                                              fontSize: 23,
-                                              fontWeight: FontWeight.w700,
-                                              color: Colors.white)),
-                                    ),
-                                  ],
-                                ),
-                                SizedBox(
-                                  height: 10,
-                                ),
-                                Row(
-                                  children: [
-                                    SizedBox(
-                                      width: 30,
-                                    ),
-                                    Container(
-                                      child: Center(
-                                        child: Text(
-                                          "Know More",
-                                          style: GoogleFonts.poppins(
-                                            textStyle: const TextStyle(
-                                              fontWeight: FontWeight.w500,
-                                              fontSize: 15,
-                                              color: Colors.white,
-                                            ),
+                                            fontWeight: FontWeight.w600,
+                                            color: Color.fromARGB(
+                                                255, 255, 255, 255),
+                                            fontSize: 26,
                                           ),
                                         ),
                                       ),
-                                      height: 30,
-                                      width: 120,
-                                      decoration: const BoxDecoration(
-                                        gradient: LinearGradient(
-                                          begin: Alignment.topRight,
-                                          end: Alignment.bottomLeft,
-                                          colors: [
-                                            Color(0xFF5AAAC3),
-                                            Color(0xFF316271),
-                                          ],
+                                      const SizedBox(
+                                        width: 62,
+                                      ),
+                                    ],
+                                  ),
+                                  Row(
+                                    children: [
+                                      SizedBox(
+                                        width: 20,
+                                      ),
+                                      Container(
+                                        child: Center(
+                                          child: Text(
+                                            "Know More",
+                                            style: GoogleFonts.poppins(
+                                              textStyle: const TextStyle(
+                                                fontWeight: FontWeight.w500,
+                                                fontSize: 15,
+                                                color: Colors.white,
+                                              ),
+                                            ),
+                                          ),
                                         ),
-                                        boxShadow: [
-                                          BoxShadow(
+                                        height: 30,
+                                        width: 120,
+                                        decoration: const BoxDecoration(
+                                          color: Color(0xFF9A4988),
+                                          boxShadow: [
+                                            BoxShadow(
                                               blurRadius: 14.0,
                                               color: Color.fromARGB(
                                                   255, 172, 176, 178),
                                               offset: Offset(
                                                 10,
                                                 10,
-                                              )),
-                                        ],
-                                        borderRadius: BorderRadius.all(
-                                          Radius.circular(10),
+                                              ),
+                                            ),
+                                          ],
+                                          borderRadius: BorderRadius.all(
+                                            Radius.circular(10),
+                                          ),
                                         ),
                                       ),
-                                    ),
-                                  ],
-                                ),
-                              ],
-                            ),
-                            height: 200,
-                            width: 315,
-                            decoration: const BoxDecoration(
-                              // image: DecorationImage(
-                              //   image: AssetImage(
-                              //     "",
-                              //   ),
-                              //   fit: BoxFit.fill,
-                              // ),
-                              gradient: LinearGradient(
-                                begin: Alignment.topRight,
-                                end: Alignment.bottomLeft,
-                                colors: [
-                                  Color.fromARGB(255, 230, 232, 234),
-                                  Color.fromARGB(255, 74, 177, 193),
+                                    ],
+                                  ),
                                 ],
                               ),
-                              boxShadow: [
-                                BoxShadow(
-                                    blurRadius: 14.0,
-                                    color: Color.fromARGB(255, 198, 194, 194),
-                                    offset: Offset(
-                                      0,
-                                      0,
-                                    )),
-                              ],
-                              borderRadius: BorderRadius.all(
-                                Radius.circular(12),
+                            ),
+                          ),
+                          GestureDetector(
+                            onTap: () {
+                              Navigator.pushNamedAndRemoveUntil(context,
+                                  FinancialPlan.idScreen, (route) => false);
+                            },
+                            child: Container(
+                              // ignore: sort_child_properties_last
+                              child: Column(
+                                children: [
+                                  const SizedBox(
+                                    height: 25,
+                                  ),
+                                  Row(
+                                    mainAxisAlignment: MainAxisAlignment.start,
+                                    children: [
+                                      const SizedBox(
+                                        width: 30,
+                                      ),
+                                      Text(
+                                        "Loan's & \nIncentives",
+                                        style: GoogleFonts.poppins(
+                                            textStyle: const TextStyle(
+                                                fontSize: 23,
+                                                fontWeight: FontWeight.w700,
+                                                color: Colors.white)),
+                                      ),
+                                    ],
+                                  ),
+                                  SizedBox(
+                                    height: 10,
+                                  ),
+                                  Row(
+                                    children: [
+                                      SizedBox(
+                                        width: 30,
+                                      ),
+                                      Container(
+                                        child: Center(
+                                          child: Text(
+                                            "Know More",
+                                            style: GoogleFonts.poppins(
+                                              textStyle: const TextStyle(
+                                                fontWeight: FontWeight.w500,
+                                                fontSize: 15,
+                                                color: Colors.white,
+                                              ),
+                                            ),
+                                          ),
+                                        ),
+                                        height: 30,
+                                        width: 120,
+                                        decoration: const BoxDecoration(
+                                          gradient: LinearGradient(
+                                            begin: Alignment.topRight,
+                                            end: Alignment.bottomLeft,
+                                            colors: [
+                                              Color(0xFF5AAAC3),
+                                              Color(0xFF316271),
+                                            ],
+                                          ),
+                                          boxShadow: [
+                                            BoxShadow(
+                                                blurRadius: 14.0,
+                                                color: Color.fromARGB(
+                                                    255, 172, 176, 178),
+                                                offset: Offset(
+                                                  10,
+                                                  10,
+                                                )),
+                                          ],
+                                          borderRadius: BorderRadius.all(
+                                            Radius.circular(10),
+                                          ),
+                                        ),
+                                      ),
+                                    ],
+                                  ),
+                                ],
+                              ),
+                              height: 200,
+                              width: 315,
+                              decoration: const BoxDecoration(
+                                // image: DecorationImage(
+                                //   image: AssetImage(
+                                //     "",
+                                //   ),
+                                //   fit: BoxFit.fill,
+                                // ),
+                                gradient: LinearGradient(
+                                  begin: Alignment.topRight,
+                                  end: Alignment.bottomLeft,
+                                  colors: [
+                                    Color.fromARGB(255, 230, 232, 234),
+                                    Color.fromARGB(255, 74, 177, 193),
+                                  ],
+                                ),
+                                boxShadow: [
+                                  BoxShadow(
+                                      blurRadius: 14.0,
+                                      color: Color.fromARGB(255, 198, 194, 194),
+                                      offset: Offset(
+                                        0,
+                                        0,
+                                      )),
+                                ],
+                                borderRadius: BorderRadius.all(
+                                  Radius.circular(12),
+                                ),
                               ),
                             ),
                           ),
@@ -700,7 +714,7 @@ class _MainScreenState extends State<MainScreen> {
                       const SizedBox(
                         height: 30,
                       ),
-                      //start from her
+                      // //start from her
                       Container(
                         child: Column(
                           children: [
@@ -1113,14 +1127,15 @@ class _MainScreenState extends State<MainScreen> {
                           size: 30,
                         ),
                         onPressed: () => {
-                          scaffoldKey.currentState?.openDrawer(),
+                          Navigator.pushNamedAndRemoveUntil(
+                              context, UPIREV.idScreen, (route) => false),
                         },
                       ),
                       label: ''),
                   BottomNavigationBarItem(
                       icon: IconButton(
                         icon: const Icon(
-                          Icons.radio_button_on_rounded,
+                          Icons.pie_chart_outline_rounded,
                           color: Color.fromARGB(255, 0, 0, 0),
                           size: 30,
                         ),

@@ -12,6 +12,7 @@ class GetStartedScreen extends StatelessWidget {
     {'name': 'ENGLISH', 'locale': Locale('en', 'US')},
     {'name': 'ಕನ್ನಡ', 'locale': Locale('kn', 'IN')},
     {'name': 'हिंदी', 'locale': Locale('hi', 'IN')},
+    {'name': 'മലയാളം', 'locale': Locale('ml', 'IN')},
   ];
 
   updateLanguage(Locale locale) {
@@ -92,7 +93,7 @@ class GetStartedScreen extends StatelessWidget {
                   height: 30,
                 ),
                 Text(
-                  "Hellomw Guis",
+                  "Unlock Your Potential",
                   style: GoogleFonts.poppins(
                     textStyle: TextStyle(
                       fontSize: 22.0,
@@ -245,8 +246,8 @@ class GetStartedScreen extends StatelessWidget {
                     height: 49.0,
                     width: 272,
                     padding: const EdgeInsets.all(13.0),
-                    child: const Text(
-                      "Get Started",
+                    child: Text(
+                      'get_start'.tr,
                       style: TextStyle(
                           fontSize: 18.0,
                           fontFamily: "Brand Bold",

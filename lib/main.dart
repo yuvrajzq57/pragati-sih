@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:get/get.dart';
 import 'package:hive_flutter/hive_flutter.dart';
+import 'package:pragati/GameComponentsFlash/MemoryCards.dart';
 import 'package:pragati/GameComponentsFlash/start_page.dart';
 import 'package:pragati/GameComponentsQuiz/gameScreens/quizScreen.dart';
 import 'package:pragati/GameComponentsQuiz/gameScreens/score_screen.dart';
@@ -14,10 +15,12 @@ import 'package:pragati/MainScreens/contactScreen.dart';
 import 'package:pragati/MainScreens/financialScreen.dart';
 import 'package:pragati/MainScreens/gamesScreen.dart';
 import 'package:pragati/MainScreens/getStartedPage.dart';
+import 'package:pragati/MainScreens/govtJobs.dart';
 import 'package:pragati/MainScreens/landingPage.dart';
 import 'package:pragati/MainScreens/loginScreen.dart';
 import 'package:pragati/MainScreens/mainPage.dart';
 import 'package:pragati/MainScreens/registrationScreen.dart';
+import 'package:pragati/MainScreens/stocks.dart';
 import 'package:pragati/MainScreens/ticTacToe.dart';
 import 'package:pragati/MainScreens/videoRecommendation.dart';
 import 'package:pragati/ProgressTracker/progressTrack.dart';
@@ -42,10 +45,9 @@ class MyApp extends StatelessWidget {
     return GetMaterialApp(
       translations: LocaleString(),
       locale: Locale('en', 'US'),
-      title: 'Flutter Demo',
       theme: ThemeData(
           fontFamily: 'Brand Bold',
-          primarySwatch: Colors.orange,
+          primarySwatch: Colors.blue,
           visualDensity: VisualDensity.adaptivePlatformDensity),
       initialRoute: FirebaseAuth.instance.currentUser == null
           ? Splash.idScreen
@@ -68,6 +70,9 @@ class MyApp extends StatelessWidget {
         ProgressTracker.idScreen: (context) => ProgressTracker(),
         RecommendationScreen.idScreen: (context) => RecommendationScreen(),
         FinancialPlan.idScreen: (context) => FinancialPlan(),
+        UPIREV.idScreen: (context) => UPIREV(),
+        MemoryMatchingGame.idScreen: (context) => MemoryMatchingGame(),
+        GovtJobs.idScreen: (context) => GovtJobs(),
       },
       debugShowCheckedModeBanner: false,
     );

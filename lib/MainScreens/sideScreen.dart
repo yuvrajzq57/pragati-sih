@@ -21,6 +21,7 @@ class _sideNavigationDrawerState extends State<sideNavigationDrawer> {
     {'name': 'ENGLISH', 'locale': Locale('en', 'US')},
     {'name': 'ಕನ್ನಡ', 'locale': Locale('kn', 'IN')},
     {'name': 'हिंदी', 'locale': Locale('hi', 'IN')},
+    {'name': 'മലയാളം', 'locale': Locale('ml', 'IN')},
   ];
 
   updateLanguage(Locale locale) {
